@@ -36,9 +36,10 @@
     "redux-logger": "^3.0.6",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
+    "request": "^2.83.0",
+    "superagent": "^3.8.2",
     "swipe-js-iso": "^2.0.4",
-    "whatwg-fetch": "^2.0.3",
-    "request": "^2.83.0"
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

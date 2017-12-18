@@ -4,57 +4,60 @@
 URL: /restaurants   GET
 参数: offset 偏移量
 返回:
-[
-  {
-    activities:[
-      {//店铺参加的活动  多个
-        "description": "满50减12",  活动描述
-        "icon_color": "f07373",     活动图标颜色
-        "icon_name": "减",          活动关键字
-        "type": 102                 活动类型
-        根据活动类型 进行筛选
-        101 特价商品
-        102 下单立减
-        104 下单返红包
-        105 进店领红包
-        106 赠品优惠
-        108 新用户优惠
+{
+  hasMore:true,      true表示还有数据  false表示没有数据了
+  restaurants: [
+      {
+        activities:[
+          {//店铺参加的活动  多个
+            "description": "满50减12",  活动描述
+            "icon_color": "f07373",     活动图标颜色
+            "icon_name": "减",          活动关键字
+            "type": 102                 活动类型
+            根据活动类型 进行筛选
+            101 特价商品
+            102 下单立减
+            104 下单返红包
+            105 进店领红包
+            106 赠品优惠
+            108 新用户优惠
+          },
+          ...
+        ]
+        "address": "北京市东城区王府井大街301号4层MF-425",  店铺地址
+        "authentic_id": 1322038224984369,
+        "delivery_mode": {           蜂鸟专送  有这个属性则显示
+          "color": "2395FF",      颜色
+          id:1                  蜂鸟专送筛选标识
+          "text": "蜂鸟专送",
+        },
+        "distance": 919,                                   距离
+        "float_delivery_fee": 5,                           配送费
+        "float_minimum_order_amount": 40,                  起送价    排序相关
+        "folding_restaurant_brand": "DQ",                  店铺商标
+        "id": 158904569,                                   店铺id
+        "image_path": "53af7ef20c0a95674bc719470faf2a47jpeg",
+        "name": "DQ冰淇淋（金街店）",                       店铺名
+        "order_lead_time": 26,                             配送时间   排序相关
+        "phone": "010-65126050",                           店铺电话
+        "rating": 5,                                       店铺评分
+        "recent_order_num": 39,                            月售单数    排序相关
+        "recommend": {                                     店铺推荐  有的有有的没有
+          "color": "#e8470b",                              显示的颜色
+          "image_hash": "ac124c767ffa7fd296d3e2d6f01798c6png",
+          "reason": "口碑人气好店",                       描述
+        },
+        "status": 1,
+        "supports": [         店铺右上角的支持   1到多个
+          {
+            "icon_color": "999999",    字体颜色
+            "icon_name": "保",       按颜色显示这个字即可
+          }
+        ],
       },
       ...
-    ]
-    "address": "北京市东城区王府井大街301号4层MF-425",  店铺地址
-    "authentic_id": 1322038224984369,
-    "delivery_mode": {           蜂鸟专送  有这个属性则显示
-      "color": "2395FF",      颜色
-      id:1                  蜂鸟专送筛选标识
-      "text": "蜂鸟专送",
-    },
-    "distance": 919,                                   距离
-    "float_delivery_fee": 5,                           配送费
-    "float_minimum_order_amount": 40,                  起送价    排序相关
-    "folding_restaurant_brand": "DQ",                  店铺商标
-    "id": 158904569,                                   店铺id
-    "image_path": "53af7ef20c0a95674bc719470faf2a47jpeg",
-    "name": "DQ冰淇淋（金街店）",                       店铺名
-    "order_lead_time": 26,                             配送时间   排序相关
-    "phone": "010-65126050",                           店铺电话
-    "rating": 5,                                       店铺评分
-    "recent_order_num": 39,                            月售单数    排序相关
-    "recommend": {                                     店铺推荐  有的有有的没有
-      "color": "#e8470b",                              显示的颜色
-      "image_hash": "ac124c767ffa7fd296d3e2d6f01798c6png",
-      "reason": "口碑人气好店",                       描述
-    },
-    "status": 1,
-    "supports": [         店铺右上角的支持   1到多个
-      {
-        "icon_color": "999999",    字体颜色
-        "icon_name": "保",       按颜色显示这个字即可
-      }
-    ],
-  },
-  ...
-]
+  ]
+}
 
 2. 获取热搜词汇  本地
 URL: /hotwords   GET
@@ -176,34 +179,37 @@ URL: /judgelist
 
 9.获取订单页列表数据
 URL: /orderlist  GET
-参数:  userid 用户id   这里统一写  42955013
+参数: userid 用户id     offset偏移量
 返回:
-[
-  {
-    "basket": {        这里只需要获取 basket.group[0].length 显示商品数量即可
-      "group": [
-        [
-          {
-            "attrs": [],
-            "name": "蟹排",
-            "new_specs": [],
-            "price": 2,
-            "quantity": 1,
-            "specs": []
-          },
-        ]
-      ],
-    }
-    "formatted_created_at": "2017-12-14 11:57",   订单时间
-    "id": 1214852881514435600,   订单id
-    "restaurant_image_hash": "0daf7269d711cd1143f4ee8e17726f52png", 店铺图片
-    "restaurant_name": "张亮麻辣烫（东大街店）",  店铺名
-    "status": "订单已完成"    订单状态
-    "total_amount": 13,      商品数量
-    "total_quantity": 13,    总价
-  },
-  ...
-]
+{
+  hasMore:true,  确定是否还有数据  false为没有
+  orderlist:[
+      {
+        "basket": {        这里只需要获取 basket.group[0].length 显示商品数量即可
+          "group": [
+            [
+              {
+                "attrs": [],
+                "name": "蟹排",
+                "new_specs": [],
+                "price": 2,
+                "quantity": 1,
+                "specs": []
+              },
+            ]
+          ],
+        }
+        "formatted_created_at": "2017-12-14 11:57",   订单时间
+        "id": 1214852881514435600,   订单id
+        "restaurant_image_hash": "0daf7269d711cd1143f4ee8e17726f52png", 店铺图片
+        "restaurant_name": "张亮麻辣烫（东大街店）",  店铺名
+        "status": "订单已完成"    订单状态
+        "total_amount": 13,      商品数量
+        "total_quantity": 13,    总价
+      },
+      ...
+  ]
+}
 
 
 10.获取订单详细信息
@@ -234,7 +240,7 @@ URL: /order  GET
 
 11.注册
 URL: /reg   POST
-参数: 请求主体:{phone, password, idcode}  手机号,密码和验证码
+参数: 请求主体:{phone, password,username}  手机号,密码和验证码
 返回:{code, msg} code为0表示成功  1表示失败
 
 12.登陆 /login  POST
@@ -244,7 +250,12 @@ URL: /reg   POST
 13. 修改用户名/密码
 URL: /updateusername  POST   ||  /updatepassword POST
 参数 请求主体:{userid,username}     ||   {userid, oldpassword, newpassword}
-返回:{code, msg} code为0表示成功     1表示失败
+返回:{code, msg}
+code:
+    0表示成功
+    1表示失败
+    2表示修改密码时，之前的密码和现在的密码相同
+
 
 14. 退出登陆
 URL: /logout  GET
@@ -253,6 +264,19 @@ URL: /logout  GET
 15.获取账户详细信息
 URL: /userdetail  GET
 参数: id  用户id
+返回:
+{
+  msg:
+  user 用户信息  用户名  头像  电话 ...
+}
+
+16.获取地址列表
+
+17.修改地址
+
+18.添加地址
+
+19.提交用户点餐数据
 
 
 
