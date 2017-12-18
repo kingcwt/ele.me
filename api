@@ -250,7 +250,12 @@ URL: /reg   POST
 13. 修改用户名/密码
 URL: /updateusername  POST   ||  /updatepassword POST
 参数 请求主体:{userid,username}     ||   {userid, oldpassword, newpassword}
-返回:{code, msg} code为0表示成功     1表示失败
+返回:{code, msg}
+code:
+    0表示成功
+    1表示失败
+    2表示修改密码时，之前的密码和现在的密码相同
+
 
 14. 退出登陆
 URL: /logout  GET

@@ -25,7 +25,22 @@ let write = (url, data, cb) => {
 };
 
 app.use(bodyParser.json());
-
+app.use((req, res, next) => {
+  //只允许8080端口跨域访问
+  res.header('Access-Control-Allow-Origin', '*');
+  //允许跨域请求的方法
+  res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,DELETE,PUT');
+  //服务器允许的跨域请求头
+  res.header('Access-Control-Allow-Headers', 'Content-Type,Accept');
+  //允许客户端把cookie发过来
+  res.header('Access-Control-Allow-Credentials', 'true');
+  if (req.method === 'OPTIONS') {
+    //如果请求的方法是options,那么意味着客户端只要响应头,直接结束相应即可
+    res.end();
+  } else {
+    next();
+  }
+});
 
 //首页
 app.get('/restaurants', (req, res) => {
@@ -180,7 +195,7 @@ app.post('/login', (req, res) => {
   read('./mock/users.json', users => {
     let oldUser = users.find(item => parseInt(item.phone) === parseInt(user.phone) && item.password === user.password);
     if (oldUser) {
-      req.session.user = oldUser;
+      //req.session.user = oldUser;
       res.json({code: 0, msg: '登陆成功'});
     } else {
       res.json({code: 1, msg: '用户名或密码错误'});
@@ -213,23 +228,29 @@ app.post('/updateusername', (req, res) => {
 
 app.post('/updatepassword', (req, res) => {
   let {userid, oldpassword, newpassword} = req.body;
-  read('./mock/users.json', data => {
-    let user = data.find(item => parseInt(item.id) === parseInt(userid) && item.password === oldpassword);
-    if (user) {
-      data.map(item => {
-        if (user === item) {
-          user.password = newpassword;
-          return user;
-        }
-        return item;
-      });
-      write('./mock/users.json', data, () => {
-        res.json({code: 0, msg: '修改成功'});
-      })
-    } else {
-      res.json({code: 1, msg: '修改失败'});
-    }
-  })
+  if(oldpassword===newpassword){
+    res.json({code:2,msg:'您想要修改的密码和之前的密码相同'});
+  }else{
+    read('./mock/users.json', data => {
+      let user = data.find(item => parseInt(item.id) === parseInt(userid) && item.password === oldpassword);
+      if (user) {
+        data.map(item => {
+          if (user === item) {
+            if (newpassword) {
+              user.password = newpassword;
+            }
+            return user;
+          }
+          return item;
+        });
+        write('./mock/users.json', data, () => {
+          res.json({code: 0, msg: '修改成功'});
+        })
+      } else {
+        res.json({code: 1, msg: '修改失败'});
+      }
+    })
+  }
 });
 
 app.post('/logout', (req, res) => {
@@ -243,7 +264,7 @@ app.get('/userdetail', (req, res) => {
     let user = users.find(item => item.id === id);
     if (user) {
       res.json(user);
-    }else{
+    } else {
 
     }
   })
