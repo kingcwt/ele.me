@@ -7,6 +7,8 @@ import Discover from './containers/Discover';
 import Order from './containers/Order';
 import Profile from './containers/Profile';
 import {HashRouter as Router,Route} from 'react-router-dom';
+import SearchInfo from "./containers/SearchInfo/index";
+import SearchList from "./containers/SearchInfo/SearchList/index";
 
 export default class App extends Component{
 
@@ -14,8 +16,8 @@ export default class App extends Component{
         return(
             <Router>
                 <div>
-                    <Route path="/home" component={Home}/>
-                    <Route path="/discover" component={Discover}/>
+                    <Route path="/home" component={SearchInfo}/>
+                    <Route path="/discover" component={SearchList}/>
                     <Route path="/order" component={Order}/>
                     <Route path="/profile" component={Profile}/>
                     <Tab/>
