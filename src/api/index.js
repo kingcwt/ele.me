@@ -1,5 +1,5 @@
 let ajax = ({method = '', url = '', async = true, data = {}, headers = {}}) => {
-  let xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
   xhr.open(method, url, async);
 
   for (let key in headers) {
@@ -21,7 +21,7 @@ let ajax = ({method = '', url = '', async = true, data = {}, headers = {}}) => {
     };
   });
 };
-
+export {ajax}
 export default {
   ajax
 }

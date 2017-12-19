@@ -1,8 +1,10 @@
 import React,{Component} from 'react';
 import './index.less';
-import  {ajax} from '../../../../util/index'
+import {connect} from 'react-redux';
+import  actions from '../../../../store/actions/searchInfo'
+import  {ajax}  from '../../../../api/index'
 import {Link} from 'react-router-dom'
-export default class SearchHeader extends Component{
+class SearchHeader extends Component{
     constructor () {
         super();
         this.state = {
@@ -12,10 +14,10 @@ export default class SearchHeader extends Component{
     handlValueChange(event){
         this.setState({valuse:event.target.value})
     }
-    launch(){
-        ajax({
-            
-        })
+    launch() {
+        this.props.ajaxSearch(this.state.valuse);
+        console.log(1);
+        console.log(this.props);
     }
     render(){
         return (
@@ -35,4 +37,7 @@ export default class SearchHeader extends Component{
         )
     }
 }
-
+export default connect(
+    state => state.search,//把仓库中的状态对象映射为组件的属性对象
+    actions
+)(SearchHeader);

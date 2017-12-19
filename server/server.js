@@ -331,6 +331,7 @@ app.post('/orderfood', (req, res) => {
 
 app.get('/search', (req, res) => {
   let {keyword} = req.query;
+  console.log(1)
   let result = restaurants.filter(item => {
     return item.name.indexOf(keyword) > -1;
   });
