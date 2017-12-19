@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "activities": [
       {
@@ -44,7 +44,7 @@
       }
     ],
     "id": 1165710,
-    "image_path": "c4e4719f367f41b7036bfc49e9a4ae3ajpeg",
+    "image_path": "https://fuss10.elemecdn.com/c/4e/4719f367f41b7036bfc49e9a4ae3ajpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -123,7 +123,7 @@
         "id": 239204810,
         "name": "感恩特惠",
         "tips": "感恩特惠",
-        "type":101
+        "type": 101
       },
       {
         "attribute": "17.0",
@@ -194,7 +194,7 @@
     "float_delivery_fee": 0,
     "float_minimum_order_amount": 35,
     "id": 1357815,
-    "image_path": "8c9f86e8a367e686a158f047fe62ebbcpng",
+    "image_path": "https://fuss10.elemecdn.com/8/c9/f86e8a367e686a158f047fe62ebbcpng.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -299,7 +299,7 @@
     "float_delivery_fee": 6,
     "float_minimum_order_amount": 20,
     "id": 156122983,
-    "image_path": "5d1a639df6b1dbe03a92ed941900aaf0jpeg",
+    "image_path": "https://fuss10.elemecdn.com/5/d1/a639df6b1dbe03a92ed941900aaf0jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": true,
     "is_stock_empty": 0,
@@ -371,7 +371,7 @@
         "id": 244230258,
         "name": "天天特价",
         "tips": "天天特价",
-        "type":101
+        "type": 101
       },
       {
         "attribute": "17.0",
@@ -426,7 +426,7 @@
         "id": -1,
         "name": "到店领代金券",
         "tips": "进店领16元代金券",
-        "type":105
+        "type": 105
       }
     ],
     "address": "北京市朝阳区建国门外大街16号2号楼W1号",
@@ -438,7 +438,7 @@
     "float_delivery_fee": 5,
     "float_minimum_order_amount": 45,
     "id": 160240489,
-    "image_path": "ec77180507ec2e57ffde850f3ab785d3jpeg",
+    "image_path": "https://fuss10.elemecdn.com/e/c7/7180507ec2e57ffde850f3ab785d3jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -499,7 +499,7 @@
         "id": 210064122,
         "name": "特价折扣",
         "tips": "特价折扣",
-        "type":101
+        "type": 101
       },
       {
         "description": "爆款活动2",
@@ -527,7 +527,7 @@
         "id": 208323986,
         "name": "特价活动1",
         "tips": "特价活动1",
-        "type":101
+        "type": 101
       }
     ],
     "address": "北京市东城区王府井大街138号伍层K5-6号",
@@ -550,7 +550,7 @@
     "float_delivery_fee": 5,
     "float_minimum_order_amount": 20,
     "id": 156852071,
-    "image_path": "ba2bfd9041a5cb6ea3c167c4fd4bd433png",
+    "image_path": "https://fuss10.elemecdn.com/b/a2/bfd9041a5cb6ea3c167c4fd4bd433png.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": true,
     "is_stock_empty": 0,
@@ -647,7 +647,7 @@
     "float_delivery_fee": 5,
     "float_minimum_order_amount": 20,
     "id": 156677513,
-    "image_path": "3e5a97dbd36fe95f330f828ce4dcd9fbpng",
+    "image_path": "//fuss10.elemecdn.com/3/7f/e9b71319954f90a3477907253bfbajpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -761,7 +761,7 @@
     "float_delivery_fee": 6,
     "float_minimum_order_amount": 20,
     "id": 157970178,
-    "image_path": "cce7f9bdd78b21f934540732bb4658d3png",
+    "image_path": "https://fuss10.elemecdn.com/c/ce/7f9bdd78b21f934540732bb4658d3png.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -858,7 +858,7 @@
     "float_delivery_fee": 5,
     "float_minimum_order_amount": 20,
     "id": 152176660,
-    "image_path": "11de22be7ee23fe5224e68333a26ad45jpeg",
+    "image_path": "src=\"https://fuss10.elemecdn.com/1/1d/e22be7ee23fe5224e68333a26ad45jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/\"",
     "is_new": false,
     "is_premium": true,
     "is_stock_empty": 0,
@@ -961,7 +961,7 @@
       }
     ],
     "id": 2012003,
-    "image_path": "030056f7fba955a82bd4a353441db2a8png",
+    "image_path": "https://fuss10.elemecdn.com/0/30/056f7fba955a82bd4a353441db2a8png.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -1040,7 +1040,7 @@
         "id": 218327258,
         "name": "爱尚炒饭，特价遇到爱",
         "tips": "爱尚炒饭，特价遇到爱",
-        "type":101
+        "type": 101
       },
       {
         "attribute": "17.0",
@@ -1122,7 +1122,7 @@
     "float_delivery_fee": 9,
     "float_minimum_order_amount": 30,
     "id": 160260087,
-    "image_path": "b5b97092d0687f61c1bec894c51196e0jpeg",
+    "image_path": "https://fuss10.elemecdn.com/2/44/f0c3baa9e7920bbfc6fc80ab357e4jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -1216,7 +1216,7 @@
         "id": -2,
         "name": "下单返代金券",
         "tips": "下单可返5元代金券",
-        "type":104
+        "type": 104
       }
     ],
     "address": "北京市东城区东直门内南小街18号楼18-13（一层0",
@@ -1262,7 +1262,7 @@
       }
     ],
     "id": 157891820,
-    "image_path": "ee715da7057e32ab215a668e3b7eee87jpeg",
+    "image_path": "https://fuss10.elemecdn.com/e/e7/15da7057e32ab215a668e3b7eee87jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": true,
     "is_stock_empty": 0,
@@ -1351,7 +1351,7 @@
         "id": 144258258,
         "name": "老鸭汤限时特价抢",
         "tips": "老鸭汤限时特价抢",
-        "type":101
+        "type": 101
       },
       {
         "attribute": "{\"120.0\": {\"quantity\": 1, \"must_pay_online\": 1, \"name\": \"\\u5927\\u53ef\\u4e50\"}, \"58.0\": {\"quantity\": 1, \"must_pay_online\": 1, \"name\": \"\\u5c0f\\u96f6\\u98df\"}}",
@@ -1371,7 +1371,7 @@
         "id": 90935145,
         "name": "天天特价菜",
         "tips": "天天特价菜",
-        "type":101
+        "type": 101
       },
       {
         "description": "下单可返6元代金券",
@@ -1380,7 +1380,7 @@
         "id": -3,
         "name": "下单返代金券",
         "tips": "下单可返6元代金券",
-        "type":104
+        "type": 104
       }
     ],
     "address": "北京市朝阳区左安门外饮马井44号旁门",
@@ -1392,7 +1392,7 @@
     "float_delivery_fee": 8,
     "float_minimum_order_amount": 22,
     "id": 1518193,
-    "image_path": "453bbbc1ebf3db0b8ab527ccf10bc402png",
+    "image_path": "https://fuss10.elemecdn.com/4/53/bbbc1ebf3db0b8ab527ccf10bc402png.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -1489,7 +1489,7 @@
     "float_delivery_fee": 5,
     "float_minimum_order_amount": 20,
     "id": 156602648,
-    "image_path": "65db720777768e50689c59b5f9c94cedjpeg",
+    "image_path": "https://fuss10.elemecdn.com/6/5d/b720777768e50689c59b5f9c94cedjpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": true,
     "is_stock_empty": 0,
@@ -1591,7 +1591,7 @@
     "float_delivery_fee": 5,
     "float_minimum_order_amount": 20,
     "id": 150984893,
-    "image_path": "c46cafbd3bfdde7a58aaaf35b5bb5610png",
+    "image_path": "https://fuss10.elemecdn.com/c/46/cafbd3bfdde7a58aaaf35b5bb5610png.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": true,
     "is_stock_empty": 0,
@@ -1677,7 +1677,7 @@
     "float_delivery_fee": 3,
     "float_minimum_order_amount": 20,
     "id": 155763957,
-    "image_path": "6460dbf7d7663fc1f73d44817b002605png",
+    "image_path": "https://fuss10.elemecdn.com/6/46/0dbf7d7663fc1f73d44817b002605png.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -1809,7 +1809,7 @@
         "id": -5,
         "name": "下单返代金券",
         "tips": "下单可返5元代金券",
-        "type":104
+        "type": 104
       },
       {
         "description": "进店领25元代金券",
@@ -1818,7 +1818,7 @@
         "id": -4,
         "name": "到店领代金券",
         "tips": "进店领25元代金券",
-        "type":105
+        "type": 105
       }
     ],
     "address": "北京市东城区崇文门外大街40号8层021",
@@ -1829,7 +1829,7 @@
     "float_delivery_fee": 5,
     "float_minimum_order_amount": 40,
     "id": 151713306,
-    "image_path": "6d9e7f132fd3d6e60f4a86b8b2b7aab8jpeg",
+    "image_path": "https://fuss10.elemecdn.com/6/d9/e7f132fd3d6e60f4a86b8b2b7aab8jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -1937,7 +1937,7 @@
         "id": -7,
         "name": "下单返代金券",
         "tips": "下单可返5元代金券",
-        "type":104
+        "type": 104
       },
       {
         "description": "进店领5元代金券",
@@ -1946,7 +1946,7 @@
         "id": -6,
         "name": "到店领代金券",
         "tips": "进店领5元代金券",
-        "type":105
+        "type": 105
       }
     ],
     "address": "北京市朝阳区朝外吉庆里1号楼东平房",
@@ -1958,7 +1958,7 @@
     "float_delivery_fee": 12,
     "float_minimum_order_amount": 39,
     "id": 159419722,
-    "image_path": "fa9f6f28a056aa8a07735cff88633857jpeg",
+    "image_path": "https://fuss10.elemecdn.com/f/a9/f6f28a056aa8a07735cff88633857jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -2037,7 +2037,7 @@
     "float_delivery_fee": 6,
     "float_minimum_order_amount": 20,
     "id": 161247869,
-    "image_path": "258e6ddecc7dcf0f53fc76db61bdccf0jpeg",
+    "image_path": "https://fuss10.elemecdn.com/c/b3/cded50c6561d4f176d3ac0bbb4b2cjpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": true,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -2107,7 +2107,7 @@
         "id": 140460434,
         "name": "特价产品18元起",
         "tips": "特价产品18元起",
-        "type":101
+        "type": 101
       },
       {
         "attribute": "17.0",
@@ -2146,7 +2146,7 @@
         "id": -8,
         "name": "下单返代金券",
         "tips": "下单可返2元代金券",
-        "type":104
+        "type": 104
       }
     ],
     "address": "北京市东城区崇文门外大街5号地下一层010064B",
@@ -2168,7 +2168,7 @@
       }
     ],
     "id": 156379327,
-    "image_path": "57ae47dbd3a6522f66edf79ae2147978png",
+    "image_path": "https://fuss10.elemecdn.com/5/7a/e47dbd3a6522f66edf79ae2147978png.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -2281,7 +2281,7 @@
       }
     ],
     "id": 1450348,
-    "image_path": "1c2c133acd30a663cd5aeaf1ee806209png",
+    "image_path": "https://fuss10.elemecdn.com/2/03/32f3a768822de2a415ff57a30e6e9jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
     "is_new": false,
     "is_premium": false,
     "is_stock_empty": 0,
@@ -2332,5 +2332,3 @@
     "type": 0
   }
 ]
-
-
