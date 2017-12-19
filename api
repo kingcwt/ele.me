@@ -271,12 +271,109 @@ URL: /userdetail  GET
 }
 
 16.获取地址列表
+URL: /address  GET
+参数: id   用户ID
+返回：
+[
+  {
+    address: "珠峰培训"               位置
+    address_detail: "回龙观东大街3号楼02号东段 2楼圆桌上"   详细地址
+    created_at: 1510801625     创建时间
+    name: "熊"                    联系人
+    phone: "18618171862"         电话
+    sex: 1                       性别
+    tag: "学校"                  标签
+    user_id: 42955013            用户id
+  },
+  ...
+]
+
 
 17.修改地址
+URL:  /updateaddress POST
+参数  {
+    address: "珠峰培训"               位置
+    address_detail: "回龙观东大街3号楼02号东段 2楼圆桌上"   详细地址
+    created_at: 1510801625     创建时间
+    name: "熊"                    联系人
+    phone: "18618171862"         电话
+    sex: 1                       性别
+    tag: "学校"                  标签
+    user_id: 42955013            用户id
+}
+返回:
+{code,msg}
+
 
 18.添加地址
+URL:  /addaddress   POST
+参数  {
+    address: "珠峰培训"               位置
+    address_detail: "回龙观东大街3号楼02号东段 2楼圆桌上"   详细地址
+    created_at: 1510801625     创建时间
+    name: "熊"                    联系人
+    phone: "18618171862"         电话
+    sex: 1                       性别
+    tag: "学校"                  标签
+    user_id: 42955013            用户id
+}
+返回:
+{ code ,  msg}
+
 
 19.提交用户点餐数据
+URL: /orderfood  POST
+参数：
+{
+  "basket": {              购物列表
+    "deliver_fee":3      配送费
+    "group": [           点餐列表
+      {
+        "name": "蟹排",
+        "price": 2,
+        "quantity": 1,
+      },
+      ...
+    ],
+  },
+  "formatted_created_at": "2017-12-14 11:57",  下单时间
+  "id": 1214852881514435600,               订单id
+  "restaurant_image_hash": "0daf7269d711cd1143f4ee8e17726f52png",   店铺图片
+  "restaurant_name": "张亮麻辣烫（东大街店）",
+  "status_bar":  "订单已完成"
+  "total_quantity": 13,     总价
+}
+返回：
+{code,msg}
+
+20.搜索
+URL: /search   GET
+参数： keyword   搜索关键字 店名
+返回：
+[
+  {
+    restaurants中的店铺数据
+  }
+]
+
+21：筛选
+URL: /filter  GET
+参数：type  活动类型
+根据活动类型 进行筛选
+    101 特价商品
+    102 下单立减
+    104 下单返红包
+    105 进店领红包
+    106 赠品优惠
+    108 新用户优惠
+
+返回：
+[
+  restaurants中的店铺数据
+  {},
+  ...
+]
+
 
 
 
