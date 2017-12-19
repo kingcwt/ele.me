@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import Tab from './components/Tab';
-import Header from './components/Header'
 import './style/common.less';
 import Home from './containers/Home';
 import Discover from './containers/Discover';
@@ -14,7 +13,7 @@ export default class App extends Component{
         return(
             <Router>
                 <div>
-                    <Route path="/home" component={Home}/>
+                    <Route exact path="/" component={Home}/>
                     <Route path="/discover" component={Discover}/>
                     <Route path="/order" component={Order}/>
                     <Route path="/profile" component={Profile}/>
