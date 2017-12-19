@@ -27,7 +27,8 @@ let write = (url, data, cb) => {
 app.use(bodyParser.json());
 app.use((req, res, next) => {
   //只允许8080端口跨域访问
-  res.header('Access-Control-Allow-Origin', '*');
+
+    res.header('Access-Control-Allow-Origin', '*');
   //允许跨域请求的方法
   res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,DELETE,PUT');
   //服务器允许的跨域请求头
