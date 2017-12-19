@@ -36,7 +36,7 @@ URL: /restaurants   GET
         "float_minimum_order_amount": 40,                  起送价    排序相关
         "folding_restaurant_brand": "DQ",                  店铺商标
         "id": 158904569,                                   店铺id
-        "image_path": "53af7ef20c0a95674bc719470faf2a47jpeg",
+        "image_path": "53af7ef20c0a95674bc719470faf2a47jpeg",  店铺图片
         "name": "DQ冰淇淋（金街店）",                       店铺名
         "order_lead_time": 26,                             配送时间   排序相关
         "phone": "010-65126050",                           店铺电话
@@ -90,13 +90,13 @@ URL : /menu  GET
 [
  {
    "description": "大家喜欢吃，才叫真好吃。",        列表首部描述
-   "is_selected": true,      是否选中,  选中滚动到这里
+   "is_selected": true,      是否选中,  选中默认滚动到这里
    "name": "热销",      左侧列表名
    "foods": [           右侧包含品类
      {
        "restaurant_id": 1357815,
        "description": "选用奥利奥饼干碎，英国进口淡奶油，新鲜现做专人直送....\n280ml盒子尺寸13*9*5.5cm",
-       "month_sales": 1361,   月售
+       "month_sales": 1361,                月售
        "image_path": "1ff85ecb0cb689bad5eb64df217f1190jpeg",
        "name": "280ml奥利奥千层便当",
        "satisfy_rate": 98,       好评率
@@ -265,28 +265,33 @@ URL: /logout  GET
 URL: /userdetail  GET
 参数: id  用户id
 返回:
-{
-  msg:
-  user 用户信息  用户名  头像  电话 ...
-}
+    成功:{
+      user 用户信息  用户名  头像  电话 ...
+    }
+    失败:{code:1,msg:'用户信息显示失败'}
 
 16.获取地址列表
 URL: /address  GET
 参数: id   用户ID
 返回：
-[
-  {
-    address: "珠峰培训"               位置
-    address_detail: "回龙观东大街3号楼02号东段 2楼圆桌上"   详细地址
-    created_at: 1510801625     创建时间
-    name: "熊"                    联系人
-    phone: "18618171862"         电话
-    sex: 1                       性别
-    tag: "学校"                  标签
-    user_id: 42955013            用户id
-  },
-  ...
-]
+找到用户:
+    成功:[
+      {
+        address: "珠峰培训"               位置
+        address_detail: "回龙观东大街3号楼02号东段 2楼圆桌上"   详细地址
+        created_at: 1510801625     创建时间
+        name: "熊"                    联系人
+        phone: "18618171862"         电话
+        sex: 1                       性别
+        tag: "学校"                  标签
+        user_id: 42955013            用户id
+      },
+      ...
+    ]
+    失败:{code:1,msg:'该用户没有保存地址'}
+
+未找到用户:{code:1,msg:'未找到用户'}
+
 
 
 17.修改地址

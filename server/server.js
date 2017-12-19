@@ -174,7 +174,6 @@ app.get('/order', (req, res) => {
 //拿不到post的req.body
 app.post('/reg', (req, res) => {
   let user = req.body;
-  console.log(user);
   read('./mock/users.json', users => {
     let oldUser = users.find(item => parseInt(item.phone) === parseInt(user.phone));
     if (oldUser) {
@@ -210,7 +209,7 @@ app.post('/updateusername', (req, res) => {
   read('./mock/users.json', data => {
     let user = data.find(item => parseInt(item.id) === parseInt(userid));
     if (user) {
-      data.map(item => {
+      data = data.map(item => {
         if (user === item) {
           user.username = username;
           return user;
@@ -234,7 +233,7 @@ app.post('/updatepassword', (req, res) => {
     read('./mock/users.json', data => {
       let user = data.find(item => parseInt(item.id) === parseInt(userid) && item.password === oldpassword);
       if (user) {
-        data.map(item => {
+        data = data.map(item => {
           if (user === item) {
             if (newpassword) {
               user.password = newpassword;
@@ -254,16 +253,16 @@ app.post('/updatepassword', (req, res) => {
 });
 
 app.post('/logout', (req, res) => {
-  req.session.user = null;
+  //req.session.user = null;
   res.json({code: 0, msg: '退出成功'});
 });
 
 app.get('/userdetail', (req, res) => {
   let id = req.query.id;
   read('./mock/users.json', users => {
-    let user = users.find(item => item.id === id);
+    let user = users.find(item => parseInt(item.id) === parseInt(id));
     if (user) {
-      res.json({code: 0, user});
+      res.json(user);
     } else {
       res.json({code: 1, msg: '用户信息显示失败'})
     }
@@ -273,8 +272,16 @@ app.get('/userdetail', (req, res) => {
 app.get('/address', (req, res) => {
   let {id} = req.query;
   read('./mock/address.json', data => {
-    let {address} = data.find(item => item.id === id);
-    res.json(address);
+    let user = data.find(item => parseInt(item.id) === parseInt(id));
+    if (user) {
+      if (user.address.length > 0) {
+        res.json(user.address);
+      } else {
+        res.json({code: 1, msg: '该用户没有保存地址'});
+      }
+    } else {
+      res.json({code: 1, msg: '未找到用户'})
+    }
   });
 });
 
@@ -282,13 +289,14 @@ app.post('/updateaddress', (req, res) => {
   let address = req.body;
   read('./mock/address.json', data => {
     let user = data.find(item => parseInt(item.id) === parseInt(address.user_id));
-    user.address.map(item => {
+    //??????????? 为什么只有这里需要加返回值
+    user.address = user.address.map(item => {
       if (parseInt(item.user_id) === parseInt(address.user_id)) {
         return address;
       }
       return item;
     });
-    data.map(item => {
+    data = data.map(item => {
       if (parseInt(item.id) === parseInt(user.id)) {
         return user;
       }
@@ -306,10 +314,9 @@ app.post('/addaddress', (req, res) => {
     let user = data.find(item => parseInt(item.id) === parseInt(address.user_id));
     if (user) {
       user.address.push(address);
-      data.map(item => {
-        if (parseInt(item.id) === parseInt(user.id)) {
-          item.address.push(address);
-        }
+      data = data.map(item => {
+        if (parseInt(item.id) === parseInt(user.id)) return user;
+        return item;
       });
     } else {
       user = {
@@ -319,13 +326,19 @@ app.post('/addaddress', (req, res) => {
       data.push(user);
     }
     write('./mock/address.json', data, () => {
-      res.json({code:0,msg:'添加成功'});
+      res.json({code: 0, msg: '添加成功'});
     })
   })
 });
 
 app.post('/orderfood', (req, res) => {
-
+  let order = req.body;
+  read('./mock/orderlist.json', data => {
+    data.push(order);
+    write('./mock/orderlist.json', data, () => {
+      res.json({code: 0, msg: '点餐成功'});
+    })
+  })
 });
 
 app.get('/search', (req, res) => {
@@ -345,10 +358,3 @@ app.get('/filter', (req, res) => {
   });
   res.json(result);
 });
-
-
-
-
-
-
-
