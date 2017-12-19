@@ -228,9 +228,9 @@ app.post('/updateusername', (req, res) => {
 
 app.post('/updatepassword', (req, res) => {
   let {userid, oldpassword, newpassword} = req.body;
-  if(oldpassword===newpassword){
-    res.json({code:2,msg:'您想要修改的密码和之前的密码相同'});
-  }else{
+  if (oldpassword === newpassword) {
+    res.json({code: 2, msg: '您想要修改的密码和之前的密码相同'});
+  } else {
     read('./mock/users.json', data => {
       let user = data.find(item => parseInt(item.id) === parseInt(userid) && item.password === oldpassword);
       if (user) {
@@ -263,9 +263,63 @@ app.get('/userdetail', (req, res) => {
   read('./mock/users.json', users => {
     let user = users.find(item => item.id === id);
     if (user) {
-      res.json(user);
+      res.json({code: 0, user});
     } else {
-
+      res.json({code: 1, msg: '用户信息显示失败'})
     }
   })
 });
+
+app.get('/address', (req, res) => {
+  let {id} = req.query;
+  read('./mock/address.json', data => {
+    let {address} = data.find(item => item.id === id);
+    res.json(address);
+  });
+});
+
+app.post('/updateaddress', (req, res) => {
+  let address = req.body;
+  read('./mock/address.json', data => {
+    data.map(item => {
+      if (item.user_id === address.user_id) {
+        return address;
+      }
+      return item;
+    });
+    res.json({code: 0, msg: '修改成功'});
+  })
+});
+
+app.post('/addaddress', (req, res) => {
+
+});
+
+app.post('/orderfood', (req, res) => {
+
+});
+
+app.get('/search', (req, res) => {
+  let {keyword} = req.query;
+  let result = restaurants.filter(item => {
+    return item.name.indexOf(keyword) > -1;
+  });
+  res.json(result);
+});
+
+
+app.get('/filter', (req, res) => {
+  let {type} = req.query;
+  let result = restaurants.filter(restaurant => {
+    let {activities} = restaurant;
+    return activities.some(item => parseInt(item.type) === parseInt(type));
+  });
+  res.json(result);
+});
+
+
+
+
+
+
+
