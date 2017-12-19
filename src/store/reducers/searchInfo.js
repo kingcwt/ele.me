@@ -1,14 +1,17 @@
 import * as types from '../action-types';
 
 let initState = {
-    searchInfoList:[]
+    searchInfoList:{
+        loading:false,
+        list:[]
+    }
 }
 export  default  function (state = initState,action) {
     switch (action.type){
         case types.AJAX_SEARCH:
         return {
             ...state,
-            searchInfo:{
+            searchInfoList:{
             loading: false,
             list: action.Date
             }
