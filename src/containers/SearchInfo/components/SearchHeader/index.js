@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import './index.less';
 import  {ajax} from '../../../../util/index'
+import {Link} from 'react-router-dom'
 export default class SearchHeader extends Component{
     constructor () {
         super();
@@ -13,7 +14,7 @@ export default class SearchHeader extends Component{
     }
     launch(){
         ajax({
-
+            
         })
     }
     render(){
@@ -22,10 +23,12 @@ export default class SearchHeader extends Component{
                 <section className="search-list-input">
                     <form className="search-list-input-form" >
                         <i className="iconfont icon-sousuo"></i>
-                        <input type="search" autofocus="autofocus" placeholder="输入商家、商品名称" className="app-11zxJ_1" name="value" value={this.state.valuse} onChange={this.handlValueChange.bind(this)}/>
+                        <input type="search" autoFocus placeholder="输入商家、商品名称" className="app-11zxJ_1" name="value" value={this.state.valuse} onChange={this.handlValueChange.bind(this)}/>
+                        <Link to="/home/list">
                             <button type="submit"  onClick={this.launch.bind(this)} className="search-list-input-button">
                                 搜索
                             </button>
+                        </Link>
                     </form>
                 </section>
             </div>
