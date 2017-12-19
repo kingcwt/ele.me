@@ -282,18 +282,47 @@ app.get('/address', (req, res) => {
 app.post('/updateaddress', (req, res) => {
   let address = req.body;
   read('./mock/address.json', data => {
-    data.map(item => {
-      if (item.user_id === address.user_id) {
+    let user = data.find(item => parseInt(item.id) === parseInt(address.user_id));
+    user.address.map(item => {
+      if (parseInt(item.user_id) === parseInt(address.user_id)) {
         return address;
       }
       return item;
     });
-    res.json({code: 0, msg: '修改成功'});
+    data.map(item => {
+      if (parseInt(item.id) === parseInt(user.id)) {
+        return user;
+      }
+      return item;
+    });
+    write('./mock/address.json', data, () => {
+      res.json({code: 0, msg: '修改成功'});
+    });
   })
 });
 
 app.post('/addaddress', (req, res) => {
-
+  let address = req.body;
+  read('./mock/address.json', data => {
+    let user = data.find(item => parseInt(item.id) === parseInt(address.user_id));
+    if (user) {
+      user.address.push(address);
+      data.map(item => {
+        if (parseInt(item.id) === parseInt(user.id)) {
+          item.address.push(address);
+        }
+      });
+    } else {
+      user = {
+        id: data.length > 0 ? data[data.length - 1].id * 1 + 1 : 1,
+        address: [address]
+      };
+      data.push(user);
+    }
+    write('./mock/address.json', data, () => {
+      res.json({code:0,msg:'添加成功'});
+    })
+  })
 });
 
 app.post('/orderfood', (req, res) => {
