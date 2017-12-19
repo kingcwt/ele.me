@@ -1,17 +1,16 @@
 import React,{Component} from 'react';
 import SearchHeader from "./components/SearchHeader/index";
-import SearchHistory from "./components/SearchHistory/index";
-import SearchHot from "./components/SearchHot/index";
+import SearchList from "./components/SearchList/index";
 export default class SearchInfo extends Component{
     render(){
         return (
             <div className="search">
                 <SearchHeader/>
                 <div className="search-list">
+                    <div className="search-list-zhezhao"></div>
+                        <SearchList/>
+                    <div style={{display: "none"}} >
 
-                    <div  userid="0">
-                        <SearchHistory/>
-                        <SearchHot/>
                     </div>
                 </div>
             </div>

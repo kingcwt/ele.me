@@ -4,7 +4,7 @@ export default class SearchListHeader extends Component{
     render(){
         return (
                 <header>
-                    <section className="search-list-input">
+             {/*       <section className="search-list-input">
                         <form className="search-list-input-form">
                             <i className="iconfont icon-sousuo"></i>
                             <input type="search" autofocus="autofocus" placeholder="输入商家、商品名称" className="app-11zxJ_1"/>
@@ -12,7 +12,7 @@ export default class SearchListHeader extends Component{
                                     搜索
                                 </button>
                         </form>
-                    </section>
+                    </section>*/}
                     <section className="search-list-type">
                         <div className="classNameification">分类 <i className="iconJiantou"></i></div>
                         <div className="comprehensive">综合排序 <i className="iconJiantou"></i></div>

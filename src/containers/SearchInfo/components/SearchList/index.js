@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import SearchListHeader from "./components/SearchListHeader/index";
-import SearchListBody from "./components/SearchListBody/index";
+import SearchListHeader from "./SearchListHeader/index";
+import SearchListBody from "./SearchListBody/index";
 export default class SearchList extends Component{
     render(){
         return (
@@ -11,4 +11,3 @@ export default class SearchList extends Component{
         )
     }
 }
-import './index.less'
