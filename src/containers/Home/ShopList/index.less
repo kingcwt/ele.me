@@ -7,6 +7,7 @@
   list-style: none;
   font-size: 10px;
   .shopImg{
+    height: 100%;
     padding: 15px 10px;
   }
   .shopLogo{
@@ -27,13 +28,12 @@
     z-index: 50;
     width: 32px;
     height: 32px;
-    background-image: -webkit-linear-gradient(315deg,#26ce61,#26ce61 50%,transparent 0);
     background-image: linear-gradient(135deg,#26ce61,#26ce61 50%,transparent 0);
     font-size: 12px;
     span{
       position: absolute;
       top: 3px;
-      left: 0px;
+      left: 0;
       display: block;
       color: #fff;
       font-weight: 700;
@@ -43,6 +43,7 @@
 }
 .shopList{
   border-bottom: 1px solid #f5efef;
+  margin-bottom: 1rem;
 }
 .main{
   display: flex;
@@ -50,7 +51,6 @@
   flex-direction: column;
   padding: 15px 10px 15px 0;
   user-select:none;
-
   .showLine2{
     margin-top: 8px;
   }
@@ -93,20 +93,6 @@
         text-overflow: ellipsis;
       }
     }
-    .is_premium{
-      &::before{
-        content: "\54C1\724C";
-        margin-right: 8px;
-        padding: 0 5px;
-        border-radius: 3px;
-        color: #6f3f15;
-        background-image: linear-gradient(-139deg,#fff100,#ffe339);
-        text-align: center;
-        white-space: nowrap;
-        font-weight: 700;
-        font-size: 20px;
-      }
-    }
     .time{
       transform: scale(.9);
       span:nth-of-type(2)::before{
@@ -142,6 +128,7 @@
           height: .18rem;
           display: inline-block;
           vertical-align: middle;
+          margin-bottom:4px;
         }
       }
 

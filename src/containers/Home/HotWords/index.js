@@ -1,18 +1,21 @@
 import React,{Component} from 'react'
-import './index.less'
+import './index.less';
+import {connect} from 'react-redux';
+import actions from '../../../store/actions/home'
 
 class HotWords extends Component{
-//   constructor(){
-//     super();
-//     this.state={
-//
-//     }
-//   }
-//   componentDidMount(){
-//
-//   }
-  render(){
+  constructor(){
+    super();
+    this.state={
 
+    }
+  }
+  componentDidMount(){
+  this.props.fetchAdd()
+  }
+
+  render(){
+    console.log(this.props);
 
 
     return(
@@ -22,10 +25,10 @@ class HotWords extends Component{
 
       <div className='hot'>
         <div className='words'>
-奶茶 酸菜鱼 沙拉 奶茶 酸菜鱼 沙拉 奶茶 酸菜鱼 沙拉 奶茶 酸菜鱼 沙拉
+          {this.props.da}
         </div>
       </div>
     )
   }
 }
-export default HotWords;
+export default connect(state => state.home,actions)(HotWords)
