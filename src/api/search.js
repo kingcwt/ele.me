@@ -7,3 +7,9 @@ export function searchRestaurant(state) {
         //data : {keyword:this.state.valuse},
     })
 }
+export  function  searchHotwords() {
+    return ajax({
+        method:'GET',
+        url:`http://localhost:3000/hotwords`
+    })
+}
