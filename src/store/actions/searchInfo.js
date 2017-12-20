@@ -4,11 +4,15 @@ import {searchRestaurant} from '../../api/search';
 let actions={
     ajaxSearch(state){
         return function (dispatch,getState) {
-            dispatch({
+/*            dispatch({
                 type:types.AJAX_SEARCH,
                 Date:searchRestaurant(state)
 
-            })
+            })*/
+            searchRestaurant(state).then(res=> dispatch({
+                type:types.AJAX_SEARCH,
+                Date:res
+            }))
         }
     }
 }

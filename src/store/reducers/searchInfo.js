@@ -16,5 +16,7 @@ export  default  function (state = initState,action) {
             list: action.Date
             }
         }
+        default :
+            return state;
     }
 }

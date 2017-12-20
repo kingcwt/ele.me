@@ -38,6 +38,6 @@ class SearchHeader extends Component{
     }
 }
 export default connect(
-    state => state.search,//把仓库中的状态对象映射为组件的属性对象
+    state => state.searchInfo,//把仓库中的状态对象映射为组件的属性对象
     actions
 )(SearchHeader);
