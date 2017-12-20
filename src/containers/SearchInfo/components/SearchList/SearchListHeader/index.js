@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './index.less'
 import {searchHotwords} from '../../../../../api/search'
-import SearchListFilter from "./SearchLIstFilter/index";
+import SearchListHeaderFilter from "../SearchListHeaderFilter/index";
 export default class SearchListHeader extends Component{
     constructor(){
         super();
@@ -17,7 +17,7 @@ export default class SearchListHeader extends Component{
     render(){
         return (
                 <header>
-                    <SearchListFilter/>
+                    <SearchListHeaderFilter/>
                     <section className="search-hot-world">
                         {
                             this.state.hotWord !=null ?(                                                   <ul>
