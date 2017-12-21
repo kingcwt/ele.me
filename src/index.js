@@ -10,8 +10,6 @@ window._store = store;
 //上面这行用来调试
 
 
-import {Provider} from 'react-redux';
-import store from './store'
 
 ReactDOM.render(
   <Provider store={store}>
