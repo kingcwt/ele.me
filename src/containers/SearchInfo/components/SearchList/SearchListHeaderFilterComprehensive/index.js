@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
+import './index.less'
 export default class SearchListHeaderFilterComprehensive extends Component{
     render(){
         return (
-            <div className={{/*this.props.date.comprehensive?"DivDisplayBlock":"DivDisplayNone"*/}}>
+            <div className='Type-bg'>
                 <ul className="comprehensiveType">
                     <li>
                         <i className="iconfont icon-jiage"></i>
