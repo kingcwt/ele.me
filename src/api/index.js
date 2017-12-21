@@ -21,7 +21,7 @@ let ajax = ({method = '', url = '', async = true, data = {}, headers = {}}) => {
     };
   });
 };
-
+export { ajax }
 export default {
   ajax
 }

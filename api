@@ -117,24 +117,24 @@ URL: /shopinfo  GET
 参数: id   店铺id
 返回:
 {
-  "activities": [              活动列表
+  "activities": [                               活动列表
     {
       "description": "满30减10，满80减25，满120减30",   活动描述
-      "icon_color": "f07373",     颜色
-      "icon_name": "减",        关键字
+      "icon_color": "f07373",                           颜色
+      "icon_name": "减",                          关键字
     },
     ...
   ],
-  "address": "北京市东城区沙滩后街13号",   店铺地址
-  "albums": [    商家实景的图片
+  "address": "北京市东城区沙滩后街13号",                 店铺地址
+  "albums": [                               商家实景的图片
     {
-      "count": 1,     数量
+      "count": 1,                               数量
       "cover_image_hash": "81180a8183aca9229da3706313a3ddd7jpeg",  图片
-      "name": "门面",  描述
+      "name": "门面",                               描述
     },
     ...
   ],
-  "name": "榴莲千层盒子",   店铺名称
+  "name": "榴莲千层盒子",                     店铺名称
   "opening_hours": [   营业时间
     "08:30/22:30"
   ],
@@ -154,6 +154,19 @@ URL: /rating  GET
     "overall_score": 4.76285,  综合评价
     "service_score": 4.78938   服务态度
 }
+
+
+ 获取评价页tags
+URL:/ratingtags GET
+参数 :id  店铺id
+返回:
+[
+  {"count": 115, "name": "全部", "unsatisfied": false},
+  {"count": 108, "name": "满意", "unsatisfied": false},
+  {"count": 7,"name": "不满意", "unsatisfied": true}
+]
+
+
 
 8. 获取店铺评价列表
 URL: /judgelist

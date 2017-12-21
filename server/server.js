@@ -4,7 +4,7 @@ let fs = require('fs');
 let bodyParser = require('body-parser');
 let app = express();
 app.listen(3000, () => {
-  console.log('3000 ok');
+  console.log('ele.me已经启动，监听3000端口');
 });
 
 let restaurants = require('./mock/restaurants');
@@ -111,6 +111,14 @@ app.get('/rating', (req, res) => {
     res.send(data);
   })
 });
+
+app.get('/ratingtags', (req, res) => {
+  let id = req.query.id;
+  request(`https://restapi.ele.me/ugc/v2/restaurants/${id}/ratings/tags`, (error, response, data) => {
+    res.send(data);
+  })
+});
+
 
 app.get('/judgelist', (req, res) => {
   //详细评价
