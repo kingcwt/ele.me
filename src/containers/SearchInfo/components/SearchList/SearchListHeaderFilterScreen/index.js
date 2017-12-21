@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
+import  './index.less'
 export default class SearchListHeaderFilterScreen extends Component{
     render(){
         return (
-            <div className={{/*this.props.date.screen?"DivDisplayBlock":"DivDisplayNone"*/}}>
+            <div className='Type-bg'>
                 <ul  className="screenType">
                     <li>
                         <h5>配送方式</h5>

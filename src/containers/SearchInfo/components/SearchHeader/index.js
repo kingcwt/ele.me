@@ -76,9 +76,9 @@ class SearchHeader extends Component{
                         <i className="iconfont icon-sousuo"></i>
                         <input  type="search"  autoFocus placeholder="输入商家、商品名称" className="app-11zxJ_1" name="value" autocomplete = "off" value={this.props.searchWord} onChange={this.handlValueChange.bind(this)}/>
                         <Link to="/home/list">
-                            <button type="submit"  onClick={this.launch.bind(this)} className="search-list-input-button">
+                            <div type="submit"  onClick={this.launch.bind(this)} className="search-list-input-button">
                                 搜索
-                            </button>
+                            </div>
                         </Link>
                     </form>
                 </section>
