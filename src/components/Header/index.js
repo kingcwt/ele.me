@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React,{Component} from 'react';
+import {withRouter} from 'react-router-dom';
 import './index.less'
-export default class Header extends Component {
+ class NavHeader extends Component {
     render() {
         return (
             <div className="nav-header">
@@ -12,3 +13,4 @@ export default class Header extends Component {
         )
     }
 }
+export default withRouter(NavHeader)
