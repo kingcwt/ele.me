@@ -6,7 +6,8 @@ export default class Edit extends Component {
     render() {
         return (
             <div className='app-3Rse1_0'>
-                <Header title='编辑地址'/>
+                <Header title='编辑地址' history={this.props.history}
+                />
                 {/*内容框*/}
                 <div className='addressfrom '>
                     {/*这是修改框*/}
