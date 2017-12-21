@@ -4,7 +4,8 @@ let initState = {
     searchInfoList:{
         loading:false,
         list:[]
-    }
+    },
+    searchWord:''
 }
 export  default  function (state = initState,action) {
     switch (action.type){
@@ -16,6 +17,11 @@ export  default  function (state = initState,action) {
             list: action.Date
             }
         }
+        case types.SEARCH_HOT_CLICK:
+            return{
+                ...state,
+                searchWord:action.val
+            }
         default :
             return state;
     }

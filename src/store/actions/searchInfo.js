@@ -14,6 +14,12 @@ let actions={
                 Date:res
             }))
         }
+    },
+    wordClicSearch(val){
+        return {
+            type:types.SEARCH_HOT_CLICK,
+            val
+        }
     }
 }
 

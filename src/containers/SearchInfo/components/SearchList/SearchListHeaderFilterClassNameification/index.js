@@ -5,7 +5,7 @@ export default class SearchLIstHeaderFilterClassNameification extends Component{
    }
     render(){
         return (
-            <div className={{/*this.props.date.classNameification?"DivDisplayBlock":"DivDisplayNone"*/}}>
+            <div >
                 <ul className="classNameificationType">
                     <li>
                         全部商家

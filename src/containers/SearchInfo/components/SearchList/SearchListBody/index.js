@@ -5,7 +5,7 @@ import  actions from '../../../../../store/actions/searchInfo'
 import {Link} from 'react-router-dom';
  class SearchListBody extends Component{
      componentDidMount(){
-         console.log(this.props.searchInfoList.list);
+        /* console.log(this.props.searchInfoList.list);*/
      }
     render(){
         return (
