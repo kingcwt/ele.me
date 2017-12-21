@@ -47,12 +47,30 @@
 }
 .main{
   display: flex;
-  width: 290px;
+  width: 280px;
   flex-direction: column;
-  padding: 15px 10px 15px 0;
+  padding: 15px 8px 15px 0;
   user-select:none;
   .showLine2{
     margin-top: 8px;
+  }
+  .good{
+    width: 280px;
+    height: 14px;
+    margin:10px 0 0 5px;
+    span{
+      height: 17px;
+      line-height: 17px;
+      .good_logo{
+        width: 12px;
+        height: 12px;
+        margin-right: 3px;
+      }
+      .good_shop{
+        font-size: 10px;
+        color: rgb(232, 71, 11);
+      }
+    }
   }
   .line{
     width: 100%;
@@ -135,16 +153,19 @@
     }
   }
   .supportWrap{
+    color: #999;
     display: flex;
+    margin-left: 10px;
     li{
+      height: 13px;
+      line-height: 13px;
       display: block;
-      margin-left: 2px;
-      font-size: 10px;
+      margin-left: 6px;
+      font-size: 7px;
       padding: 1px;
       border-radius: 2px;
       color: #999;
       border:1px solid #ddd;
-      text-align: center;
     }
   }
 }

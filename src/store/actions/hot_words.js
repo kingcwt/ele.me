@@ -1,12 +1,12 @@
 import * as types from '../action-types';
-import {getAdd} from '../../api/home';
+import {getHot} from '../../api/hot_words';
 
 let actions={
-  fetchAdd(){
+  fetchHot(){
     return function (dispatch,getState) {
-      let data = getAdd();
+      let data = getHot();
       dispatch({
-        type:types.FETCH_ADD,
+        type:types.FETCH_HOT_WORDS,
         payload:data
       })
     }

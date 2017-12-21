@@ -4,15 +4,15 @@
 import * as types from '../action-types';
 
 let initState = {
-  add:{}
+  words:[]
 };
 
 export default function (state = initState,action) {
   switch (action.type){
-    case types.FETCH_ADD:
+    case types.FETCH_HOT_WORDS:
       return{
         ...state,
-        add:action.payload
+        words:action.payload
       };
     default:
       return state;
