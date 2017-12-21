@@ -3,9 +3,12 @@ import home_header from './home_header';
 import hot_words from './hot_words';
 import shop_list from './shop_list';
 import {routerReducer} from 'react-router-redux';
+
 import orderList from './orderList';
+import  searchInfo from './searchInfo'
 
 let reducers = combineReducers({
+    searchInfo,
   //添加了这个之后,大家可以在actions中按需使用dispatch(push('/xxx')) 跳转到某个路由
   home_header,
   hot_words,

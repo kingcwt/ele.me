@@ -6,6 +6,7 @@ class Tab extends Component{
     render(){
         return(
            <nav>
+
                <NavLink  to="/" exact>
                    <i className="iconfont icon-eliaomo1"></i>
                    <span>外卖</span>

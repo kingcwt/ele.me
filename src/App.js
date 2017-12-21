@@ -5,6 +5,7 @@ import Home from './containers/Home';
 import Discover from './containers/Discover';
 import Order from './containers/Order';
 import Profile from './containers/Profile';
+
 import Edit from './containers/Address/Edit';
 import Add from './containers/Address/Add';
 import Search from './containers/Address/Search';
@@ -14,12 +15,16 @@ import Address from "./containers/Address/My/index";
 // import Header from "./components/Header/index";
 export default class App extends Component {
 
+
+
     render() {
         return (
             <Router>
                 <div>
+
                     <Route exact path="/" component={Home}/>
                     <Route path="/discover" component={Discover}/>
+
                     <Route path="/order" component={Order}/>
                     <Route path="/profile" component={Profile}/>
                     <Route path="/edit" component={Edit}/>
