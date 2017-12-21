@@ -7,10 +7,11 @@ import Index2 from "./FirmOrder/index";
 import FirmOrder from '../../containers/Order/FirmOrder/index'
 import HistoryOrder from "./HistoryOrder/index";
 export default class Order extends Component{
+
     render(){
         return (
             <div>
-             <HistoryOrder/>
+             <FirmOrder/>
 
             </div>
         )
