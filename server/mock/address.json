@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "address": [
+      {
+        "address": "珠峰培训",
+        "address_detail": "回龙观东大街3号楼02号东段 2楼圆桌上",
+        "created_at": 1510801625,
+        "name": "熊",
+        "phone": "18618171862",
+        "sex": 1,
+        "tag": "学校",
+        "user_id": 1
+      },
+      {
+        "address": "zfpx",
+        "address_detail": "回龙观东大街3号楼02号东段 2楼圆桌上",
+        "created_at": 1510801625,
+        "name": "熊",
+        "phone": "18618171862",
+        "sex": 1,
+        "tag": "学校",
+        "user_id": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "address": [
+      {
+        "address": "aaaaaaaa",
+        "address_detail": "回龙观东大街3号楼02号东段 2楼圆桌上",
+        "created_at": 1510801625,
+        "name": "熊",
+        "phone": "18618171862",
+        "sex": 1,
+        "tag": "学校",
+        "user_id": 2
+      }
+    ]
+  }
+]
