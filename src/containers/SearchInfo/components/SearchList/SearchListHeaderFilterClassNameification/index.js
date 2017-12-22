@@ -12,6 +12,9 @@ export default class SearchLIstHeaderFilterClassNameification extends Component{
 
    }
    handleClick=(e)=>{
+       for (let i in event.target) {
+           console.log(i + "-------" + event.target[i]);
+       }
        let name = e.target.getAttribute('type');//获取type属性，type属性值就是state的属性名，传过来那个命，就把相应的值改成true
        if(this.valu == name ){//判断上次点的和这次点的是不是一个，是一个就收起来
            this.setState({

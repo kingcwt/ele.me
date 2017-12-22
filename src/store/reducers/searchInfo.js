@@ -22,6 +22,14 @@ export  default  function (state = initState,action) {
                 ...state,
                 searchWord:action.val
             }
+        case types.SORT_SEARCH:
+            return {
+                ...state,
+                searchInfoList: {
+                    loading: false,
+                    list: action.Date
+                }
+            }
         default :
             return state;
     }
