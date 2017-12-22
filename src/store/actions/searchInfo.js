@@ -20,6 +20,12 @@ let actions={
             type:types.SEARCH_HOT_CLICK,
             val
         }
+    },
+    sortSearch(state){
+        return{
+            type:types.SORT_SEARCH,
+            Date:state
+        }
     }
 }
 

@@ -1,56 +1,96 @@
-import React,{Component} from 'react';
-import './index.less'
+import React, {Component} from 'react'
+import './index.less';
 import {connect} from 'react-redux';
-import  actions from '../../../../../store/actions/searchInfo'
+import actions from '../../../../../store/actions/searchInfo'
 import {Link} from 'react-router-dom';
- class SearchListBody extends Component{
-     componentDidMount(){
-        /* console.log(this.props.searchInfoList.list);*/
-     }
-    render(){
-        return (
 
-                <article>
-                    {this.props.searchInfoList.list.map((res,index)=>(
-                        <Link  key={res.id} to="/">
-                        <section className="search-unite">
-                            <div className="search-unite-headerImg"><img src={res.image_path} alt=""/></div>
-                            <div className="search-unite-body">
-                                <div className="search-unite-restaurant">
-                                    <h4>{res.name}</h4>
-                                    <div className="search-unite-restaurant-info1">
-                        <span>
-                            <img src={require('./star_org.png')} alt=""/>
-                        </span>
-                                        <span>{res.rating}</span>
-                                        <span>月售{res.recent_order_num}单</span>
-                                    </div>
-                                    <div className="search-unite-restaurant-info2">
-                                        <span>￥{res.float_minimum_order_amount}起送</span>
-                                        <span>配送费￥{res.float_delivery_fee}</span>
-                                        <span>{res.distance}km</span>
-                                        <span>{res.order_lead_time}分钟</span>
-                                    </div>
-                                    <div>口碑人气</div>
-                                </div>
-                                <div className="search-unite-food">
-                                    <div>有一个活动</div>
-                                    <div>
-                                        <div>
-                                            <span>新用户下单立减7元</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        </Link>
-                    ))}
+class SearchListBody extends Component {
+  /*  componentDidMount() {
+      this.props.fetchShop();
+    }*/
+  render() {
+    return (
+      <div className='shopList'>
+        {
+          this.props.searchInfoList.list.map((item, index) => {
+            console.log(item);
+            return (
+              <Link key={index} to={`/detail/${item.id}`}>
+                <div className='listItem'>
+                  <div className='shopImg'>
+                    <div className='shopLogo'>
+                      <img src={item.image_path}/>
+                    </div>
+                    <div className="new"><span>新店</span></div>
+                  </div>
+                  <div className='main'>
+                    <div className="showLine">
+                      <h3>
+                        <span>{item.name}</span>
+                      </h3>
+                      <ul className='supportWrap'>
+                        {
+                          item.supports.map((value, index) => {
+                            return (
+                              <li key={index}>{value.icon_name}</li>
+                            )
+                          })
+                        }
+                      </ul>
+                    </div>
+                    <div className="showLine showLine2">
+                      <div className='rateWrap'>
+                        <div>
+                          <div className='star' style={{width: `${100 * item.rating / 5}%`}}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 10" width="100%" height="100%">
+                              <path fill="#FFCC01" fillRule="evenodd"
+                                    d="M54.017 8.072l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L53.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm-48 0L3.465 9.633c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L5.63.589c.213-.515.557-.523.774 0L7.55 3.352l2.982.237c.556.044.67.368.24.736L8.497 6.269l.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L17.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L29.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L41.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56z"></path>
+                            </svg>
+                          </div>
+                        </div>
+                        <span className='num'>{item.rating}</span>
+                        <span className='num'>月售{item.recent_order_num}单</span>
+                      </div>
+                      {item.delivery_mode ? <div className='deliver'>
+                        <span>蜂鸟专送</span>
+                      </div> : null}
+                    </div>
 
-                </article>
-        )
-    }
+                    <div className="showLine showLine2">
+                      <div className='money'>
+                        <span>¥{item.float_minimum_order_amount}起送</span>
+                        <span>配送费¥{item.float_delivery_fee}</span>
+                      </div>
+                      <div className='time'>
+                        <span>{(item.distance / 1000).toFixed(1)}km</span>
+                        <span>{item.order_lead_time}分钟</span>
+                      </div>
+                    </div>
+                    <div className="good">
+                      <span>
+                        <img
+                          src="//fuss10.elemecdn.com/a/c1/24c767ffa7fd296d3e2d6f01798c6png.png?imageMogr/format/webp/thumbnail/!60x60r/gravity/Center/crop/60x60/"
+                          className="good_logo"/>
+                        <span className="good_shop">口碑人气好店</span>
+                      </span>
+                    </div>
+                    <div className='line'></div>
+                    <div className="show_active">
+                      {/*<Active data={item.activities}/>*/}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+            )
+          })
+        }
+      </div>
+    )
+  }
 }
+
 export default connect(
-    state => state.searchInfo,//把仓库中的状态对象映射为组件的属性对象
-    actions
+  state => state.searchInfo,//把仓库中的状态对象映射为组件的属性对象
+  actions
 )(SearchListBody);
