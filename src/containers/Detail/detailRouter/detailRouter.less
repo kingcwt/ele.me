@@ -1,0 +1,30 @@
+.detail-router{
+  display: flex;
+  justify-content: space-around;
+  border-bottom:1px solid #eeeeee;
+  background: #FFFFFF;
+  &.fixed{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  a{
+    height: .81rem;
+    line-height: .81rem;
+    color: #666666;
+    font-size: .28rem;
+    span{
+      display: inline-block;
+      height: .73rem;
+      border-bottom:.08rem solid transparent;
+    }
+    &.active{
+      color: #3190e8;
+      font-weight: bold;
+      span{
+        border-bottom:.08rem solid #3190e8;
+      }
+    }
+  }
+}

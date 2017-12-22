@@ -83,8 +83,6 @@ import {orderList} from '../../../api/order/order'
                         ))}
 
                 </section>
-
-
             </div>
         )
     }

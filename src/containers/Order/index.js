@@ -11,7 +11,7 @@ export default class Order extends Component{
     render(){
         return (
             <div>
-             <FirmOrder/>
+             <HistoryOrder/>
 
             </div>
         )

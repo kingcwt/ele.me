@@ -4,17 +4,22 @@ import {connect} from 'react-redux';
 import actions from '../../../store/actions/shop_list';
 import Active from './Active/index';
 
+import {Link} from 'react-router-dom';
+
+
 class ShopList extends Component {
   componentDidMount() {
     this.props.fetchShop();
   }
+
   render() {
     return (
       <div className='shopList'>
         {
           this.props.list.shop.map((item, index) => {
             return (
-                <div key={index} className='listItem'>
+              <Link key={index} to={{pathname:`/detail/${item.id}` ,state:{id:item.id}}}>
+                <div className='listItem'>
                   <div className='shopImg'>
                     <div className='shopLogo'>
                       <img src={item.image_path}/>
@@ -46,12 +51,12 @@ class ShopList extends Component {
                             </svg>
                           </div>
                         </div>
-                        <span className='num'>{item.rating}</span>
+                        <span className='num'>{(item.rating).toFixed(1)}</span>
                         <span className='num'>月售{item.recent_order_num}单</span>
                       </div>
-                      {item.delivery_mode?<div className='deliver'>
+                      {item.delivery_mode ? <div className='deliver'>
                         <span>蜂鸟专送</span>
-                      </div>:null}
+                      </div> : null}
                     </div>
 
                     <div className="showLine showLine2">
@@ -60,13 +65,15 @@ class ShopList extends Component {
                         <span>配送费¥{item.float_delivery_fee}</span>
                       </div>
                       <div className='time'>
-                        <span>{(item.distance/1000).toFixed(1)}km</span>
+                        <span>{(item.distance / 1000).toFixed(1)}km</span>
                         <span>{item.order_lead_time}分钟</span>
                       </div>
                     </div>
                     <div className="good">
                       <span>
-                        <img src="//fuss10.elemecdn.com/a/c1/24c767ffa7fd296d3e2d6f01798c6png.png?imageMogr/format/webp/thumbnail/!60x60r/gravity/Center/crop/60x60/" className="good_logo"/>
+                        <img
+                          src="//fuss10.elemecdn.com/a/c1/24c767ffa7fd296d3e2d6f01798c6png.png?imageMogr/format/webp/thumbnail/!60x60r/gravity/Center/crop/60x60/"
+                          className="good_logo"/>
                         <span className="good_shop">口碑人气好店</span>
                       </span>
                     </div>
@@ -76,6 +83,7 @@ class ShopList extends Component {
                     </div>
                   </div>
                 </div>
+              </Link>
             )
           })
         }
