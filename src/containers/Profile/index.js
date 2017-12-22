@@ -19,7 +19,7 @@ export default class Profile extends Component {
                             alt=""/>
                     </div>
                     {/*登陆注册*/}
-                    <div className='myLogin'>
+                    <Link  to='/login' className='myLogin'>
                         <p className='myLoginFont'>登陆 / 注册</p>
                         <p className='myPrivilege'>
                             <i className='iconfont icon-shouji'/>登陆后享受更多特权
@@ -27,7 +27,7 @@ export default class Profile extends Component {
                         <span className='myLogin-right'>
                             <i className='iconfont icon-xiangyou1'/>
                         </span>
-                    </div>
+                    </Link>
                 </div>
                 {/*红包*/}
                 <div className='nvelopes'>

@@ -18,7 +18,7 @@ class DetailHeader extends Component {
   render() {
     let shopInfo = this.props.shopInfo.shop;
     return (
-      <div className='detail-header'>
+      <div className='_detail-header'>
         <div className='detail-header-top'>
           <img
             src="https://fuss10.elemecdn.com/1/d0/fc1b528693b64b3a6da77f4718554png.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/"

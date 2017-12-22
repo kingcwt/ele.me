@@ -26,8 +26,9 @@ export default class FirmOrder extends Component {
   }
 
   render() {
-    return (
-      <div>
+
+      return (
+        <div className='__scroll'>
         <Header title='确认订单'/>
         <section className='_section_1'>
           <Link to='/my' className='_section_div'>
@@ -44,25 +45,25 @@ export default class FirmOrder extends Component {
           <span>送达时间</span>
           <p>尽快送达 | 预计14:12</p>
         </section>
-        {this.state.list.orderList.map((item, index) => (
-          <section className='_section_3' key={index}>
+
+          <section className='_section_3' >
             <div className='_section_3_div'>
               <i className='_section_3_i1'></i>
-              <span>{item.restaurant_name}</span>
+              <span>张亮麻辣烫(东大街店)</span>
               <i className='_section_3_i2'></i>
             </div>
             <ul className='_section_3_ul'>
               <li className='_section_3_ul_li'>
-                <p className='_section_3_ul_li_p1'>{item.basket.group[0][0].name}</p>
-                <p className='_section_3_ul_li_p2'>*{item.basket.group[0][0].quantity}</p>
-                <p className='_section_3_ul_li_p3'>￥{item.basket.group[0][0].price}</p>
+                <p className='_section_3_ul_li_p1'>鹌鹑蛋</p>
+                <p className='_section_3_ul_li_p2'>x12</p>
+                <p className='_section_3_ul_li_p3'>￥24</p>
               </li>
             </ul>
             <ul className='_section_3_ul_2'>
               <li className='_section_3_ul_2_li'>
-                <span className='_section_3_ul_2_li_span1'>{item.basket.deliver_fee.name}</span>
+                <span className='_section_3_ul_2_li_span1'>配送费</span>
                 <i className='_section_3_ul_2_li_i'></i>
-                <span className='_section_3_ul_2_li_span2'>{item.basket.deliver_fee.price}￥</span>
+                <span className='_section_3_ul_2_li_span2'>￥3</span>
               </li>
               <li className='_section_3_ul_2_li_2'>
                 <span className='_section_3_ul_2_li_2_span1'>餐盒</span>
@@ -74,7 +75,7 @@ export default class FirmOrder extends Component {
               <li className='_section_3_ul_li'>
                 <span className='_section_3_ul_3_span1'>抢</span>
                 <span className='_section_3_ul_3_span2'></span>
-                <span className='_section_3_ul_3_span3'>- ¥28.1</span>
+                <span className='_section_3_ul_3_span3'>- ¥0</span>
               </li>
             </ul>
             <div className='__section_div1'>
@@ -83,7 +84,7 @@ export default class FirmOrder extends Component {
             </div>
             <div className='__section_div2'>
               <span className='__section_div2_span1'>优惠说明</span>
-              <span className='__section_div2_span2'>小计<h5>¥{item.total_quantity}</h5></span>
+              <span className='__section_div2_span2'>小计<h5>¥27</h5></span>
             </div>
             <div className='__div1'>在线支付</div>
             <div className='__div2'>
@@ -92,12 +93,12 @@ export default class FirmOrder extends Component {
             </div>
             <div className='__div3'>不需要开发票</div>
           </section>
-        ))}
+
         <footer className='_gg'>
-          <span>待支付 ¥44.5</span>
-          <small> ｜优惠 ¥16.5
+          <span>待支付 ¥27</span>
+          <small> ｜优惠 ¥0
           </small>
-          <a>去支付</a>
+          <Link to='/historyorder'>去支付</Link>
         </footer>
       </div>
     )

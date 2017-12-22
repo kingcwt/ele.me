@@ -13,7 +13,7 @@ class ShopList extends Component {
   render() {
 
     return (
-      <div className='shopList'>
+      <div className='_shopList'>
         {
           this.props.list.shop.map((item, index) => {
             return (

@@ -24,7 +24,7 @@ export default class Detail extends Component {
       restaurantId = localStorage.getItem('restaurantId');
     }
     return (
-      <div className='detail'>
+      <div className='_detail'>
         <header className='detail-title'>
           <i onClick={() => this.props.history.goBack()} className='iconfont icon-fanhui'></i>
           <i className='iconfont icon-gouwuche'></i>

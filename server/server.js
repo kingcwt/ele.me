@@ -24,11 +24,13 @@ let write = (url, data, cb) => {
 };
 //本地商家列表
 let restaurants = require('./mock/restaurants');
+let orderList = require('./mock/orderlist');
+console.log(orderList);
 
 //中间件
 app.use((req, res, next) => {
   //只允许8080端口跨域访问
-  res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+  res.header('Access-Control-Allow-Origin', '*');
   //允许跨域请求的方法
   res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,DELETE,PUT');
   //服务器允许的跨域请求头
@@ -79,7 +81,7 @@ let homePage = {
 app.get(homePage.restaurants, (req, res) => {
   let offset = parseInt(req.query.offset) || 0;
   offset = offset < 0 ? 0 : offset;
-  let limit =20;
+  let limit = 20;
   let hasMore = true;
   //商店列表  参数 offset
   let result = restaurants.slice(offset, offset + limit);
@@ -182,24 +184,36 @@ app.get(detail.judgeList, (req, res) => {
 app.get('/orderlist', (req, res) => {
   let id = req.query.userid;
   let offset = parseInt(req.query.offset) || 0;
+  console.log(id, offset);
   offset = offset < 0 ? 0 : offset;
-  let limit = 5;
-  read('./mock/orderlist.json', (data) => {
-    let user = data.find(item => parseInt(item.id) === parseInt(id));
-    if (user) {
-      let orders = user.orders;
-      if (orders && orders.length > 0) {
-        let backOrder = orders.slice(offset, offset + limit);
-        let hasMore = true;
-        if (orders.length <= offset + limit) {
-          hasMore = false;
-        }
-        res.json({code: 0, hasMore, orderList: backOrder})
-      }
-    } else {
-      res.send({code: 1, msg: '用户不存在'})
+  let limit = 10;
+  let user=orderList.find(item=>parseInt(item.id) === parseInt(id));
+  let orders = user.orders;
+  if (orders && orders.length > 0) {
+    let backOrder = orders.slice(offset, offset + limit);
+    let hasMore = true;
+    if (orders.length <= offset + limit) {
+      hasMore = false;
     }
-  });
+    res.json({code: 0, hasMore, orderList: back Order})
+  }
+  /*read('./mock/orderlist.json', (data) => {
+    console.log(data);
+    let user = data.find(item => {
+
+      return parseInt(item.id) === parseInt(id)
+    });
+    console.log(user);
+    let orders = user.orders;
+    if (orders && orders.length > 0) {
+      let backOrder = orders.slice(offset, offset + limit);
+      let hasMore = true;
+      if (orders.length <= offset + limit) {
+        hasMore = false;
+      }
+      res.json({code: 0, hasMore, orderList: backOrder})
+    }
+  });*/
 });
 
 //订单详情   未完成

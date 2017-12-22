@@ -21,7 +21,7 @@ class Active extends Component{
     }
   }
   handleShowMore(event){
-    event.stopPropagation();
+    event.preventDefault();
     this.setState({
       hide:!this.state.hide
     })

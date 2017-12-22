@@ -14,6 +14,11 @@ import {HashRouter as Router, Route} from 'react-router-dom';
 import Address from "./containers/Address/My/index";
 import SearchInfo from "./containers/SearchInfo/index";
 import Detail from "./containers/Detail/detail";
+import Login from "./containers/Login/login";
+import AccounHeader from "./containers/Login/AccounHeader/accounheader";
+import ChangePassword from "./containers/Login/AccounHeader/ChangePassword/changepassword";
+import FirmOrder from "./containers/Order/FirmOrder/index";
+import HistoryOrder from "./containers/Order/HistoryOrder/index";
 
 export default class App extends Component {
   render() {
@@ -31,6 +36,11 @@ export default class App extends Component {
           <Route path="/home/search" component={SearchInfo}/>
           <Route path="/home/list" component={SearchInfo}/>
           <Route path="/detail" component={Detail}/>
+          <Route path='/login' component={Login}/>
+          <Route path='/firmorder' component={FirmOrder}/>
+          <Route path='/accounHeader' component={AccounHeader}/>
+          <Route path='/changepassword' component={ChangePassword}/>
+          <Route path='/historyorder' component={HistoryOrder}/>
           <Tab/>
         </div>
       </Router>
