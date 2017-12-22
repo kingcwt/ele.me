@@ -352,9 +352,9 @@ app.post('/orderfood', (req, res) => {
 
 app.get('/search', (req, res) => {
   let {keyword} = req.query;
-  console.log(1)
   let result = restaurants.filter(item => {
-    return item.name.indexOf(keyword) > -1;
+    console.log(JSON.stringify(item));
+    return JSON.stringify(item).indexOf(keyword) > -1;
   });
   res.json(result);
 });

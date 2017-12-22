@@ -15,7 +15,7 @@ export default class SearchListHeaderFilter extends Component{
     }
     handleClick=(event,m)=>{
         for(let i in event.target){
-            console.log(i+"-------"+event.target[i]);
+            //console.log(i+"-------"+event.target[i]);
         }
         if(m){
             this.setState({

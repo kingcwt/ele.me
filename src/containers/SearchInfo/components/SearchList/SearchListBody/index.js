@@ -2,18 +2,21 @@ import React, {Component} from 'react'
 import './index.less';
 import {connect} from 'react-redux';
 import actions from '../../../../../store/actions/searchInfo'
+import {Link} from 'react-router-dom';
 
 class SearchListBody extends Component {
-/*  componentDidMount() {
-    this.props.fetchShop();
-  }*/
+  /*  componentDidMount() {
+      this.props.fetchShop();
+    }*/
   render() {
     return (
-      <div className='shopList' >
+      <div className='shopList'>
         {
-            this.props.searchInfoList.list.map((item, index) => {
+          this.props.searchInfoList.list.map((item, index) => {
+            console.log(item);
             return (
-                <div key={index} className='listItem'>
+              <Link key={index} to={`/detail/${item.id}`}>
+                <div className='listItem'>
                   <div className='shopImg'>
                     <div className='shopLogo'>
                       <img src={item.image_path}/>
@@ -27,10 +30,10 @@ class SearchListBody extends Component {
                       </h3>
                       <ul className='supportWrap'>
                         {
-                          item.supports.map((value,index)=>{
-                            return(
+                          item.supports.map((value, index) => {
+                            return (
                               <li key={index}>{value.icon_name}</li>
-                              )
+                            )
                           })
                         }
                       </ul>
@@ -48,9 +51,9 @@ class SearchListBody extends Component {
                         <span className='num'>{item.rating}</span>
                         <span className='num'>月售{item.recent_order_num}单</span>
                       </div>
-                      {item.delivery_mode?<div className='deliver'>
+                      {item.delivery_mode ? <div className='deliver'>
                         <span>蜂鸟专送</span>
-                      </div>:null}
+                      </div> : null}
                     </div>
 
                     <div className="showLine showLine2">
@@ -59,13 +62,15 @@ class SearchListBody extends Component {
                         <span>配送费¥{item.float_delivery_fee}</span>
                       </div>
                       <div className='time'>
-                        <span>{(item.distance/1000).toFixed(1)}km</span>
+                        <span>{(item.distance / 1000).toFixed(1)}km</span>
                         <span>{item.order_lead_time}分钟</span>
                       </div>
                     </div>
                     <div className="good">
                       <span>
-                        <img src="//fuss10.elemecdn.com/a/c1/24c767ffa7fd296d3e2d6f01798c6png.png?imageMogr/format/webp/thumbnail/!60x60r/gravity/Center/crop/60x60/" className="good_logo"/>
+                        <img
+                          src="//fuss10.elemecdn.com/a/c1/24c767ffa7fd296d3e2d6f01798c6png.png?imageMogr/format/webp/thumbnail/!60x60r/gravity/Center/crop/60x60/"
+                          className="good_logo"/>
                         <span className="good_shop">口碑人气好店</span>
                       </span>
                     </div>
@@ -75,6 +80,8 @@ class SearchListBody extends Component {
                     </div>
                   </div>
                 </div>
+              </Link>
+
             )
           })
         }
@@ -84,6 +91,6 @@ class SearchListBody extends Component {
 }
 
 export default connect(
-    state => state.searchInfo,//把仓库中的状态对象映射为组件的属性对象
-    actions
+  state => state.searchInfo,//把仓库中的状态对象映射为组件的属性对象
+  actions
 )(SearchListBody);

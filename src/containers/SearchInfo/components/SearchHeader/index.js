@@ -31,14 +31,13 @@ class SearchHeader extends Component{
         this.props.history.push('/')
     }
     render(){
-        console.log(this.props);
         return (
             <div>
                 <section className="search-list-input">
                     <i className='iconfont icon-fanhui' onClick={this.cb}></i>
                     <form className="search-list-input-form" >
                         <i className="iconfont icon-sousuo"></i>
-                        <input  type="search"  autoFocus placeholder="输入商家、商品名称" className="app-11zxJ_1" name="value" autocomplete = "off" value={this.props.searchWord} onChange={this.handlValueChange.bind(this)}/>
+                        <input  type="search"  autoFocus placeholder="输入商家、商品名称" className="app-11zxJ_1" name="value" autoComplete = "off" value={this.props.searchWord} onChange={this.handlValueChange.bind(this)}/>
                         <Link to="/home/list">
                             <div type="submit"  onClick={this.launch.bind(this)} className="search-list-input-button">
                                 搜索
