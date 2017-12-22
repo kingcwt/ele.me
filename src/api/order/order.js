@@ -10,4 +10,5 @@ export function order(id) {
         method:'GET',
         url:`http://localhost:3000/order?id=${id}`,
     })
+
 }

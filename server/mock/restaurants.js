@@ -858,7 +858,7 @@ module.exports = [
     "float_delivery_fee": 5,
     "float_minimum_order_amount": 20,
     "id": 152176660,
-    "image_path": "https://fuss10.elemecdn.com/1/1d/e22be7ee23fe5224e68333a26ad45jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
+    "image_path": "src=\"https://fuss10.elemecdn.com/1/1d/e22be7ee23fe5224e68333a26ad45jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/\"",
     "is_new": false,
     "is_premium": true,
     "is_stock_empty": 0,
