@@ -6,11 +6,12 @@ import Banner from "./Banner/index";
 import Title from "./Title/index";
 import './index.less'
 import ShopList from "./ShopList/index";
+import ReturnTop from '../../components/ReturnTop/index';
 
 export default class Home extends Component{
     render(){
         return (
-            <div className="home">
+            <div className="_home">
               <HomeHeader/>
               <Search/>
               <HotWords/>
