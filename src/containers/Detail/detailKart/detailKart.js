@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import actions from '../../../store/actions/detail';
 import PlusMinus from "../plusMinus/plusMinus";
+import {Link} from 'react-router-dom';
 
 class DetailKart extends Component {
   constructor() {
@@ -15,6 +16,7 @@ class DetailKart extends Component {
 
   clearAll = () => {
     this.props.clearAllFood();
+    this.setState({showCart: false});
   };
 
   addCartCount = (cart_id) => {
@@ -41,6 +43,11 @@ class DetailKart extends Component {
     if (activity) {
       var {description} = activity;
     }
+    let cartInfo = {
+      cartList: this.props.cartList,
+      name: this.props.detail?this.props.detail.shopInfo.shop.name:'',
+      deliver_fee: this.props.shopInfo.shop.float_delivery_fee
+    };
     return (
       <div className='detail-kart'>
         <div className='kart-position'>
@@ -70,7 +77,8 @@ class DetailKart extends Component {
                                 <span>{item.specfoods ? (item.specfoods[0].price * item.food_count).toFixed(2) : ''}</span>
                               </div>
                               <div className='product-count'>
-                                <a onClick={() => this.minusCartCount(item.virtual_food_id)} className='price-minus'>一</a>
+                                <a onClick={() => this.minusCartCount(item.virtual_food_id)}
+                                   className='price-minus'>一</a>
                                 <span>{item.food_count}</span>
                                 <a onClick={() => this.addCartCount(item.virtual_food_id)} className='price-plus'>+</a>
                               </div>
@@ -103,7 +111,7 @@ class DetailKart extends Component {
                   (
                     this.props.shopInfo.shop.float_minimum_order_amount - price > 0 ?
                       <span>还差￥{(this.props.shopInfo.shop.float_minimum_order_amount - price).toFixed(2)}起送</span> :
-                      <span>去结算</span>
+                      <Link to={{pathname: '/firmorder', state: {cartInfo, price}}}><span>去结算</span></Link>
                   ) :
                   <span>￥{this.props.shopInfo.shop.float_minimum_order_amount}起送</span>
               }

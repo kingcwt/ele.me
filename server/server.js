@@ -54,7 +54,7 @@ app.use(session({
 //静态目录托管
 app.use(express.static('build'));
 app.use((req, res, next) => {
-  console.log(req.session);
+  //console.log(req.session);
   //console.log(req.body);
   //console.log(req.query);
   if (!req.session.users) {
@@ -458,7 +458,6 @@ app.post('/orderfood', (req, res) => {
 app.get('/search', (req, res) => {
   let {keyword} = req.query;
   let result = restaurants.filter(item => {
-    console.log(JSON.stringify(item));
     return JSON.stringify(item).indexOf(keyword) > -1;
   });
   res.json(result);

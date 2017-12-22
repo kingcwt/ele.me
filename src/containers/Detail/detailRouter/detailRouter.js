@@ -10,10 +10,6 @@ export default class DetailRouter extends Component {
     }
   }
 
-  componentDidMount(){
-
-  }
-
   render() {
     this.id = null;
     if (this.props.location.state && this.props.location.state.id) {

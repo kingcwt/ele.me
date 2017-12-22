@@ -34,7 +34,6 @@ import actions from  '../../../../../store/actions/searchInfo'
                     <section className="search-hot-body">
                         {
                             this.state.hotWord.map((item, index) => {
-                                console.log(item);
                                 return !(item.search_word.match(/^\s*$/)) ? (
                                     <Link to="/home/list" key={index}  >
                                         <span onClick={this.handleClick} className="search-hot-body-text" >{item.search_word}</span>

@@ -5,17 +5,17 @@ import actions from '../../../../../store/actions/searchInfo'
 import {Link} from 'react-router-dom';
 
 class SearchListBody extends Component {
-  /*  componentDidMount() {
-      this.props.fetchShop();
-    }*/
+    componentDidMount() {
+      //this.props.fetchShop();
+      console.log(this.props);
+    }
   render() {
     return (
       <div className='shopList'>
         {
           this.props.searchInfoList.list.map((item, index) => {
-            console.log(item);
             return (
-              <Link key={index} to={`/detail/${item.id}`}>
+              <Link key={index} to={{pathname:`/detail/${item.id}` ,state:{id:item.id}}}>
                 <div className='listItem'>
                   <div className='shopImg'>
                     <div className='shopLogo'>
@@ -81,7 +81,6 @@ class SearchListBody extends Component {
                   </div>
                 </div>
               </Link>
-
             )
           })
         }
