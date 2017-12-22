@@ -41,6 +41,30 @@ app.use((req, res, next) => {
     next();
   }
 });
+<<<<<<< HEAD
+=======
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: 'xgod',
+  cookie: {maxAge: 1000 * 60 * 60 * 24}
+}));
+//静态目录托管
+app.use(express.static('build'));
+app.use((req, res, next) => {
+  //console.log(req.session);
+  //console.log(req.body);
+  //console.log(req.query);
+  if (!req.session.users) {
+    req.session.users = [];
+  }
+  next();
+});
+
+>>>>>>> 4c471a0e283fa1d14f95f0a63a2606479e1d45bc
 
 //首页
 app.get('/restaurants', (req, res) => {
@@ -344,7 +368,11 @@ app.post('/orderfood', (req, res) => {
 app.get('/search', (req, res) => {
   let {keyword} = req.query;
   let result = restaurants.filter(item => {
+<<<<<<< HEAD
     return item.name.indexOf(keyword) > -1;
+=======
+    return JSON.stringify(item).indexOf(keyword) > -1;
+>>>>>>> 4c471a0e283fa1d14f95f0a63a2606479e1d45bc
   });
   res.json(result);
 });
