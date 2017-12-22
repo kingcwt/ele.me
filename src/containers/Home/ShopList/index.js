@@ -50,7 +50,7 @@ class ShopList extends Component {
                             </svg>
                           </div>
                         </div>
-                        <span className='num'>{item.rating}</span>
+                        <span className='num'>{(item.rating).toFixed(1)}</span>
                         <span className='num'>月售{item.recent_order_num}单</span>
                       </div>
                       {item.delivery_mode ? <div className='deliver'>
@@ -78,7 +78,7 @@ class ShopList extends Component {
                     </div>
                     <div className='line'></div>
                     <div className="show_active">
-                      {/*<Active data={item.activities}/>*/}
+                      <Active data={item.activities}/>
                     </div>
                   </div>
                 </div>
