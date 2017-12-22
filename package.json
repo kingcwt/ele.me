@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p",
     "dev": "webpack-dev-server --open",
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "dev-web": "webpack-dev-server --open",
+    "dev-node": "node server/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,15 +21,19 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "connect-mongo": "^2.0.0",
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.5.7",
     "es6-promise": "^4.1.1",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "history": "^4.7.2",
+    "iscroll": "^5.2.0",
     "mongoose": "^4.12.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-iscroll": "^2.0.3",
     "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",
     "react-swipe": "^5.1.0",
@@ -55,6 +61,7 @@
     "less-loader": "^4.0.5",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
+    "web-storage-cache": "^1.0.3",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   },

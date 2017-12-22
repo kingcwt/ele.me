@@ -18,9 +18,5 @@ git clone https://github.com/dogXgod/ele.me.git
 通过npm安装本地服务第三方依赖模块(需要已安装Node.js)
 
 ```
-npm install
-```
-启动服务(http://localhost:8080)
-```
-
+git clone https://github.com/dogXgod/ele.me.git
 ```
