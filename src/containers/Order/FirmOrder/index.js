@@ -87,14 +87,16 @@ export default class FirmOrder extends Component{
                             <span className='__div2_span2'>口味偏重</span>
                         </div>
                         <div className='__div3'>不需要开发票</div>
+                        <footer className='_gg'>
+                            <span>待支付 ¥{item.total_quantity}</span>
+                            <small>        ｜优惠 ¥16.5
+                            </small>
+                            <Link to='/historyorder'>去支付</Link>
+                        </footer>
                     </section>
                 ))}
-                <footer className='_gg'>
-                    <span>待支付 ¥44.5</span>
-                    <small>        ｜优惠 ¥16.5
-                    </small>
-                    <a>去支付</a>
-                </footer>
+
+
             </div>
         )
     }
