@@ -6,6 +6,7 @@ import DetailKart from "../detailKart/detailKart";
 import PlusMinus from "../plusMinus/plusMinus";
 
 class DetailProduct extends Component {
+
   constructor() {
     super();
     this.state = {
@@ -13,9 +14,16 @@ class DetailProduct extends Component {
       count: 0,
     }
   }
-  componentDidMount() {
-    this.props.fetchDetailMenu(152106988);
 
+  componentDidMount() {
+    let id = null;
+    if (this.props.location.state && this.props.location.state.id) {
+      id = this.props.location.state.id;
+      this.props.fetchDetailMenu(id);
+    } else {
+      id = localStorage.getItem('restaurantId');
+      this.props.fetchDetailMenu(id);
+    }
   }
 
   scrollToAnchor = (id) => {

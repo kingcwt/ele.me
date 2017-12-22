@@ -26,7 +26,6 @@ class DetailKart extends Component {
   };
 
   render() {
-    console.log(this.props);
     let price = this.props.cartList.reduce((prev, next) => {
       if (next.specfoods) {
         if (!next.food_count) {

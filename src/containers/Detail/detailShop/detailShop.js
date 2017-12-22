@@ -5,7 +5,14 @@ import actions from '../../../store/actions/detail';
 
 class DetailShop extends Component {
   componentDidMount() {
-    this.props.fetchShopInfo(152106988);
+    let id = null;
+    if (this.props.location.state && this.props.location.state.id) {
+      id = this.props.location.state.id;
+      this.props.fetchShopInfo(id);
+    } else {
+      id = localStorage.getItem('restaurantId');
+      this.props.fetchShopInfo(id);
+    }
   }
 
   render() {
@@ -24,9 +31,9 @@ class DetailShop extends Component {
           <h4>活动与服务</h4>
           <ul>
             {
-              shopInfo.activities.map((item,index)=>{
+              shopInfo.activities.map((item, index) => {
                 return <li key={index}>
-                  <span className='activity' style={{backgroundColor:`#${item.icon_color}`}}>{item.icon_name}</span>
+                  <span className='activity' style={{backgroundColor: `#${item.icon_color}`}}>{item.icon_name}</span>
                   <span>{item.description}</span>
                 </li>
               })

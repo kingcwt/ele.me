@@ -9,23 +9,34 @@ import DetailComment from "./detailComment/detailComment";
 
 
 export default class Detail extends Component {
+  componentDidMount() {
+    if(this.props.location.state&&this.props.location.state.id){
+      localStorage.setItem('restaurantId', JSON.stringify(this.props.location.state.id));
+    }
+  }
+
   render() {
+    let restaurantId = null;
+    if (this.props.location.state && this.props.location.state.id) {
+      restaurantId = this.props.location.state.id;
+    } else {
+      restaurantId = localStorage.getItem('restaurantId');
+    }
     return (
       <div className='detail'>
         <header className='detail-title'>
-          <i className='iconfont icon-fanhui'></i>
+          <i onClick={() => this.props.history.goBack()} className='iconfont icon-fanhui'></i>
           <i className='iconfont icon-gouwuche'></i>
         </header>
-        <DetailHeader/>
-        <DetailRouter/>
+        <DetailHeader {...this.props}/>
+        <DetailRouter {...this.props}/>
         <Router>
           <div>
-            <Route exact path='/detail' component={DetailProduct}/>
-            <Route path='/detail/comment' component={DetailComment}/>
-            <Route path='/detail/shop' component={DetailShop}/>
+            <Route exact path='/detail/:id' component={DetailProduct}/>
+            <Route path={`/detail/:id/comment`} component={DetailComment}/>
+            <Route path='/detail/:id/shop' component={DetailShop}/>
           </div>
         </Router>
-
       </div>
     )
   }

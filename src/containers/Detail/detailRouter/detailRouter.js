@@ -10,22 +10,22 @@ export default class DetailRouter extends Component {
     }
   }
 
-  componentDidMount() {
-    this.router.addEventListener('scroll', (e) => {
-      let scrollT = this.router.scrollTop;
-      let offsetT = this.router.offsetTop;
-      if (offsetT===0) {
-        this.setState({flag: true});
-      }
-    })
+  componentDidMount(){
+
   }
 
   render() {
+    this.id = null;
+    if (this.props.location.state && this.props.location.state.id) {
+      this.id = this.props.location.state.id;
+    } else {
+      this.id = localStorage.getItem('restaurantId');
+    }
     return (
-      <div ref={input => this.router = input} className={'detail-router ' + (this.state.flag ? 'fixed' : '')}>
-        <NavLink exact to='/detail'><span>商品</span></NavLink>
-        <NavLink to='/detail/comment'><span>评价</span></NavLink>
-        <NavLink to='/detail/shop'><span>店铺</span></NavLink>
+      <div className={'detail-router ' + (this.state.flag ? 'fixed' : '')}>
+        <NavLink exact to={{pathname:`/detail/${this.id}`}}><span>商品</span></NavLink>
+        <NavLink to={`/detail/${this.id}/comment`}><span>评价</span></NavLink>
+        <NavLink to={`/detail/${this.id}/shop`}><span>店铺</span></NavLink>
       </div>
     )
   }

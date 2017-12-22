@@ -227,7 +227,7 @@ URL: /orderlist  GET
 
 10.获取订单详细信息
 URL: /order  GET
-参数  id   订单id
+参数  userid 用户id    orderid  订单id
 返回:
 [
   {
@@ -261,13 +261,12 @@ URL: /reg   POST
 返回:{code, msg} code为0表示成功  1表示失败
 
 13. 修改用户名/密码
-URL: /updateusername  POST   ||  /updatepassword POST
-参数 请求主体:{userid,username}     ||   {userid, oldpassword, newpassword}
+URL: /updateuser  POST   ||  /updatepassword POST
+参数 请求主体:{userid}     ||   {userid, oldpassword, newpassword}
 返回:{code, msg}
 code:
     0表示成功
     1表示失败
-    2表示修改密码时，之前的密码和现在的密码相同
 
 
 14. 退出登陆
@@ -360,6 +359,7 @@ URL: /orderfood  POST
   "restaurant_name": "张亮麻辣烫（东大街店）",
   "status_bar":  "订单已完成"
   "total_quantity": 13,     总价
+  id:    用户id
 }
 返回：
 {code,msg}

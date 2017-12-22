@@ -14,31 +14,26 @@ import {HashRouter as Router, Route} from 'react-router-dom';
 import Address from "./containers/Address/My/index";
 import SearchInfo from "./containers/SearchInfo/index";
 import Detail from "./containers/Detail/detail";
+
 export default class App extends Component {
-
-
-
-
-
-
-    render() {
-        return (
-            <Router>
-                <div>
-                    <Route exact path="/" component={Home}/>
-                    <Route path="/discover" component={Discover}/>
-                    <Route path="/order" component={Order}/>
-                    <Route path="/profile" component={Profile}/>
-                    <Route path="/edit" component={Edit}/>
-                    <Route path="/add" component={Add}/>
-                    <Route path="/search" component={Search}/>
-                    <Route path="/my" component={My}/>
-                    <Route path="/home/search" component={SearchInfo}/>
-                    <Route path="/home/list" component={SearchInfo}/>
-                    <Route path="/detail" component={Detail}/>
-                    <Tab/>
-                </div>
-            </Router>
-        )
-    }
+  render() {
+    return (
+      <Router>
+        <div>
+          <Route exact path="/" component={Home}/>
+          <Route path="/discover" component={Discover}/>
+          <Route path="/order" component={Order}/>
+          <Route path="/profile" component={Profile}/>
+          <Route path="/edit" component={Edit}/>
+          <Route path="/add" component={Add}/>
+          <Route path="/search" component={Search}/>
+          <Route path="/my" component={My}/>
+          <Route path="/home/search" component={SearchInfo}/>
+          <Route path="/home/list" component={SearchInfo}/>
+          <Route path="/detail" component={Detail}/>
+          <Tab/>
+        </div>
+      </Router>
+    )
+  }
 }

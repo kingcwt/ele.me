@@ -5,7 +5,14 @@ import actions from '../../../store/actions/detail';
 
 class DetailHeader extends Component {
   componentDidMount() {
-    this.props.fetchShopInfo(152106988);
+    let id = null;
+    if (this.props.location.state && this.props.location.state.id) {
+      id = this.props.location.state.id;
+      this.props.fetchShopInfo(id);
+    } else {
+      id = localStorage.getItem('restaurantId');
+      this.props.fetchShopInfo(id);
+    }
   }
 
   render() {
@@ -26,8 +33,8 @@ class DetailHeader extends Component {
         </div>
         <div className="detail-header-bot">
           <p>
-            <span>{shopInfo.activities.length>0? shopInfo.activities[0].icon_name:''}</span>
-            {shopInfo.activities.length>0?shopInfo.activities[0].description:''}
+            <span>{shopInfo.activities.length > 0 ? shopInfo.activities[0].icon_name : ''}</span>
+            {shopInfo.activities.length > 0 ? shopInfo.activities[0].description : ''}
           </p>
           <p>{shopInfo.activities.length}个活动</p>
         </div>
