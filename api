@@ -200,7 +200,7 @@ URL: /orderlist  GET
           ],
         }
         "formatted_created_at": "2017-12-14 11:57",   订单时间
-        "id": 12143852881514435600,   订单id
+        "id": 1214852881514435600,   订单id
         "restaurant_image_hash": "0daf7269d711cd1143f4ee8e17726f52png", 店铺图片
         "restaurant_name": "张亮麻辣烫（东1大街店）",  店铺名
         "status": "订单已完成"    订单状态
