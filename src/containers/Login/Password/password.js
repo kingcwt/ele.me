@@ -23,12 +23,12 @@ class Password extends Component{
                 <div onClick={this.handleChange}>
                     <div className="password_1">
                         <div className="password_2"></div>
-                        <span>...</span>
+                        <span></span>
                     </div>
                     <div
                         className="password_3">
                         <div className="password_2"></div>
-                        <span>abc</span>
+                        <span></span>
                     </div>
                 </div>
             </div>

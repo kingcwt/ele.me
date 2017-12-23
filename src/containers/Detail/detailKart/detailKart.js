@@ -27,6 +27,10 @@ class DetailKart extends Component {
     this.props.minusCartCnt(cart_id)
   };
 
+  clearCount(){
+    this.props.clearAllCount();
+  }
+
   render() {
     let price = this.props.cartList.reduce((prev, next) => {
       if (next.specfoods) {
@@ -111,7 +115,7 @@ class DetailKart extends Component {
                   (
                     this.props.shopInfo.shop.float_minimum_order_amount - price > 0 ?
                       <span>还差￥{(this.props.shopInfo.shop.float_minimum_order_amount - price).toFixed(2)}起送</span> :
-                      <Link to={{pathname: '/firmorder', state: {cartInfo, price}}}><span>去结算</span></Link>
+                      <Link to={{pathname: '/firmorder', state: {cartInfo, price}}}><span onClick={()=>this.clearCount()}>去结算</span></Link>
                   ) :
                   <span>￥{this.props.shopInfo.shop.float_minimum_order_amount}起送</span>
               }

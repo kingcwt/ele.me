@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom';
 class SearchListBody extends Component {
     componentDidMount() {
       //this.props.fetchShop();
-      console.log(this.props);
     }
   render() {
     return (

@@ -93,6 +93,11 @@ let actions = {
       type:types.MINUS_CART_CNT,
       cart_id
     }
+  },
+  clearAllCount(){
+    return {
+      type:types.CLEAR_ALL_COUNT
+    }
   }
 };
 export default actions;

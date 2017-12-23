@@ -175,6 +175,12 @@ export default function (state = initState, action) {
         count,
         cartList
       };
+    case types.CLEAR_ALL_COUNT:
+      return {
+        ...state,
+        count:0,
+        cartList:[]
+      };
     default:
       return state;
   }

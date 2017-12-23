@@ -55,8 +55,8 @@ class Search extends Component{
 
   render(){
     return(
-    <div className='searchBox'  style={this.state.support? {position: 'sticky',top: '-1px',zIndex: 100}:{height:this.state.height===0?null:this.state.height}}>
-      <div ref={(div)=>{this.searchBox=div;}}  className='search' style={this.state.support? null : this.state.css}>
+    <div className='lin_searchBox'  style={this.state.support? {position: 'sticky',top: '-1px',zIndex: 100}:{height:this.state.height===0?null:this.state.height}}>
+      <div ref={(div)=>{this.searchBox=div;}}  className='lin_search' style={this.state.support? null : this.state.css}>
         <Link to="/home/search">
           <span className='searchContent'>
             <i className='searchIcon'></i>

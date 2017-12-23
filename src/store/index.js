@@ -17,7 +17,7 @@ let router = routerMiddleware(createHashHistory());
 //logger   在控制台打印出 前后的状态
 let store = composeEnhancers(applyMiddleware(router,thunk, promise, logger))(createStore)(reducers);*/
 
-let store = applyMiddleware(router, thunk, promise, logger)(createStore)(reducers);
+let store = applyMiddleware(router, thunk, promise)(createStore)(reducers);
 
 window.store = store;
 export default store;

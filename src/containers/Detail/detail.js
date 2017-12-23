@@ -17,7 +17,6 @@ export default class Detail extends Component {
 
   render() {
     let restaurantId = null;
-    console.log(this.props,localStorage.getItem('restaurantId'));
     if (this.props.location.state && this.props.location.state.id) {
       restaurantId = this.props.location.state.id;
     } else {

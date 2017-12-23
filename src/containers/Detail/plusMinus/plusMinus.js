@@ -10,8 +10,7 @@ class PlusMinus extends Component {
       count: 0,
       goods_item: {
         count: 0,
-
-      }
+      },
     }
   }
   addCount(menu_id,food_id){
@@ -21,6 +20,8 @@ class PlusMinus extends Component {
     this.props.minusFoodCount(menu_id,food_id);
   }
 
+
+
   render() {
     let {item,food}=this.props;
     return (
@@ -29,7 +30,7 @@ class PlusMinus extends Component {
         {
           food.food_count > 0 ? <span>{food.food_count}</span> : null
         }
-        <a onClick={()=>this.addCount(item.id,food.virtual_food_id)} className='price-plus'>+</a>
+        <a onClick={ ()=>this.addCount(item.id,food.virtual_food_id)} className='price-plus'>+</a>
       </div>
     )
   }

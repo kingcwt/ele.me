@@ -20,12 +20,11 @@ export default class HistoryOrder extends Component{
       this.setState({
         list:res
       },function () {
-        console.log(this.state);
+       // console.log(this.state);
       })
     })
   }
   render(){
-    console.log(this.state.list);
     return (
       <div>
         <Header title='订单'/>

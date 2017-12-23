@@ -25,7 +25,6 @@ let write = (url, data, cb) => {
 //本地商家列表
 let restaurants = require('./mock/restaurants');
 let orderList = require('./mock/orderlist');
-console.log(orderList);
 
 //中间件
 app.use((req, res, next) => {
@@ -195,7 +194,7 @@ app.get('/orderlist', (req, res) => {
     if (orders.length <= offset + limit) {
       hasMore = false;
     }
-    res.json({code: 0, hasMore, orderList: back Order})
+    res.json({code: 0, hasMore, orderList: backOrder})
   }
   /*read('./mock/orderlist.json', (data) => {
     console.log(data);

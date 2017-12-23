@@ -45,3 +45,5 @@ export const FETCH_SHOP_LIST = 'FETCH_SHOP_LIST';
 export  const  AJAX_SEARCH = 'AJAX_SEARCH';
 export  const  SEARCH_HOT_CLICK = 'SEARCH_HOT_CLICK';
 export  const  SORT_SEARCH ='SORT_SEARCH';
+
+export const CLEAR_ALL_COUNT='CLEAR_ALL_COUNT';
