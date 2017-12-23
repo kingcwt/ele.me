@@ -30,7 +30,7 @@ class DetailProduct extends Component {
     if (id) {
       let anchorElement = document.getElementById(id);
       if (anchorElement) {
-        anchorElement.scrollIntoView({behavior: 'smooth', block: "start"});
+        anchorElement.scrollIntoView({behavior: 'smooth', block: "start",inline:'center'});
       }
     }
   };

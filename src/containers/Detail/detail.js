@@ -16,12 +16,12 @@ export default class Detail extends Component {
   }
 
   render() {
-    let restaurantId = null;
+    /*let restaurantId = null;
     if (this.props.location.state && this.props.location.state.id) {
       restaurantId = this.props.location.state.id;
     } else {
       restaurantId = localStorage.getItem('restaurantId');
-    }
+    }*/
     return (
       <div className='_detail'>
         <header className='detail-title'>
